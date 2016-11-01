@@ -1,0 +1,13 @@
+@import url("../fonts/baarsophia/baarsophia.css");
+@import url("../fonts/baarantropos/baarantropos.css");
+@import url("../fonts/baargoetheanis/baargoetheanis.css");
+
+.sophia {
+	font-family: 'Baar Sophia', sans-serif;
+}
+.antropos {
+	font-family: 'Baar Antropos', sans-serif;
+}
+.goetheanis {
+	font-family: 'Baar Goetheanis', cursive;
+}

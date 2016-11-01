@@ -1,0 +1,8 @@
+*.pyc
+*.pyo
+*.db
+.idea/
+.DS_Store
+.coverage
+local_settings.py
+/static

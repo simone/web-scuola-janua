@@ -1,0 +1,7 @@
+@font-face {
+    font-family: 'Baar Goetheanis';
+    src: url('baar_goetheanis-webfont.woff2') format('woff2'),
+         url('baar_goetheanis-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}

@@ -1,0 +1,208 @@
+@charset "utf-8";
+/* Global styles CSS Document */
+
+* {
+	margin: 0;
+	font-family: 'Baar Sophia', century-gothic, sans-serif;
+}
+html, body {
+	height: 100%;
+	margin-bottom: 1px;
+}
+a:hover, a:focus {
+	color: inherit;
+}
+#wrapper {
+	height: 100%;
+	min-height: 100%;
+	height: auto !important;
+	margin: 0 auto -301px; /* the bottom margin is the negative value of the footer's height */
+}
+#push {
+	height: 301px;
+}
+footer {
+	height: 276px;
+}
+.container {
+	max-width: 960px;
+}
+.clear {
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+.clearfix:after {
+	clear: both;
+	display: table;
+	content: ""; /* Older browser do not support empty content */
+}
+h1, h1 a, h2, h2 a, h3, h3 a, h4, h4 a, h5, h5 a, h6, h6 a {
+	color: #9FCF67;
+	margin: 0 0 .5em;
+	line-height: 1.5em;
+	font-family: 'Baar Goetheanis', sans-serif;
+}
+h1:hover, h1 a:hover, h2:hover, h2 a:hover, h3:hover, h3 a:hover, h4:hover, h4 a:hover, h5:hover, h5 a:hover, h6:hover, h6 a:hover {}
+h1, h1 a {
+	font-size: 36px;
+}
+h2, h2 a {
+	font-size: 34px;
+}
+h3, h3 a {
+	font-size: 32px;
+}
+h4, h4 a {
+	font-size: 28px;
+}
+h5, h5 a {
+	font-size: 24px;
+}
+h6, h6 a {
+	font-size: 20px;
+}
+p {
+	color: #333;
+	font-size: 20px;
+	font-weight: 400;
+	margin: 0 0 1.5em;
+	line-height: 1.5em;
+}
+a {
+	color: #333;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+ul, ol {}
+li {
+	color: #333;
+	font-size: inherit;
+	line-height: 1.5em;
+}
+q, blockquote {
+	color: #333;
+	font-size: 16px;
+	margin: 0 0 .5em;
+	line-height: 1.5em;
+}
+/*
+ q, blockquote:before {
+ content: "\201C";
+ }
+ q, blockquote:after {
+ content: "\201D";
+ }
+ */
+cite {
+	color: #333;
+	font-size: 16px;
+	margin: 0 0 .5em;
+	line-height: 1.5em;
+}
+img {
+	margin: 0;
+	padding: 0;
+	border: none;
+	max-width: 100%;
+}
+table {}
+th {
+	color: #333;
+	text-align: left;
+	font-size: inherit;
+}
+td {
+	color: #333;
+	text-align: left;
+	font-size: inherit;
+}
+
+/* generic classes */
+
+.left {
+	float: left;
+}
+.right {
+	float: right;
+}
+.m0 {
+	margin: 0 !important;
+}
+.w50 {
+	width: 50%;
+}
+
+/*
+-------------------------------------------------------------- */
+.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+.aligncenter,
+div.aligncenter {
+    display: block;
+    margin: 5px auto 5px auto;
+}
+
+.alignright {
+    float:right;
+    margin: 5px 0 20px 20px;
+}
+
+.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+}
+
+a img.alignright {
+    float: right;
+    margin: 5px 0 20px 20px;
+}
+
+a img.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+a img.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+}
+
+a img.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+}
+
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	color: #21759b;
+	display: block;
+	font-size: 16px;
+	font-size: 0.875rem;
+	font-weight: bold;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000; /* Above WP toolbar. */
+}

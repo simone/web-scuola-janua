@@ -1,0 +1,432 @@
+{% extends "base.html" %}
+{% load i18n static %}
+
+{% block meta_title %}{% trans "Home" %}{% endblock %}
+{% block title %}{% trans "Home" %}{% endblock %}
+
+{% block breadcrumb_menu %}
+<li class="active">{% trans "Home" %}</li>
+{% endblock %}
+
+{% block main %}
+<div id="slider">
+
+        <div class="cycle-slideshow" data-cycle-fx="fade" data-cycle-loader="wait" data-cycle-timeout="8000"
+             data-cycle-pause-on-hover="true" data-cycle-slides="> div">
+
+            <div class="slide">
+
+                <img width="1024" height="640" src="{% static 'images/slides/slide1.jpg' %}"
+                     class="attachment-1024x1024x1 size-1024x1024x1" alt="default"
+                     srcset="{% static 'images/slides/slide1.jpg' %} 300w, {% static 'images/slides/slide1.jpg' %} 768w, {% static 'images/slides/slide1.jpg' %} 1024w, {% static 'images/slides/slide1.jpg' %} 1200w"
+                     sizes="(max-width: 1024px) 100vw, 1024px"/>
+
+            </div>
+
+
+            <div class="slide">
+
+
+                <img width="1024" height="683" src="{% static 'images/slides/slide2.jpg' %}"
+                     class="attachment-1024x1024x1 size-1024x1024x1" alt="parent-child-optimized"
+                     srcset="{% static 'images/slides/slide2.jpg' %} 300w, {% static 'images/slides/slide2.jpg' %} 768w, {% static 'images/slides/slide2.jpg' %} 1024w, {% static 'images/slides/slide2.jpg' %} 1200w"
+                     sizes="(max-width: 1024px) 100vw, 1024px"/>
+
+            </div>
+
+
+            <div class="slide">
+
+
+                <img width="1024" height="629" src="{% static 'images/slides/slide3.jpg' %}"
+                     class="attachment-1024x1024x1 size-1024x1024x1" alt="preschool-optimized"
+                     srcset="{% static 'images/slides/slide3.jpg' %} 300w, {% static 'images/slides/slide3.jpg' %} 768w, {% static 'images/slides/slide3.jpg' %} 1024w, {% static 'images/slides/slide3.jpg' %} 1200w"
+                     sizes="(max-width: 1024px) 100vw, 1024px"/>
+
+            </div>
+
+
+            <div class="slide">
+
+
+                <img width="1024" height="683" src="wp-content/uploads/2016/01/kindergarten-optimized.jpg"
+                     class="attachment-1024x1024x1 size-1024x1024x1" alt="kindergarten-optimized"
+                     srcset="http://scuola.janua.it/wp-content/uploads/2016/01/kindergarten-optimized-300x200.jpg 300w, http://scuola.janua.it/wp-content/uploads/2016/01/kindergarten-optimized-768x512.jpg 768w, http://scuola.janua.it/wp-content/uploads/2016/01/kindergarten-optimized-1024x683.jpg 1024w, http://scuola.janua.it/wp-content/uploads/2016/01/kindergarten-optimized.jpg 1920w"
+                     sizes="(max-width: 1024px) 100vw, 1024px"/>
+
+            </div>
+
+
+            <div class="slide">
+
+
+                <img width="1024" height="683" src="wp-content/uploads/2016/01/lower-school-v2-final-optimized.jpg"
+                     class="attachment-1024x1024x1 size-1024x1024x1" alt="lower-school-v2-final-optimized"
+                     srcset="http://scuola.janua.it/wp-content/uploads/2016/01/lower-school-v2-final-optimized-300x200.jpg 300w, http://scuola.janua.it/wp-content/uploads/2016/01/lower-school-v2-final-optimized-768x512.jpg 768w, http://scuola.janua.it/wp-content/uploads/2016/01/lower-school-v2-final-optimized-1024x683.jpg 1024w, http://scuola.janua.it/wp-content/uploads/2016/01/lower-school-v2-final-optimized.jpg 1920w"
+                     sizes="(max-width: 1024px) 100vw, 1024px"/>
+
+            </div>
+
+
+            <div class="slide">
+
+
+                <img width="1024" height="426" src="wp-content/uploads/2016/01/chalkboard-science.jpg"
+                     class="attachment-1024x1024x1 size-1024x1024x1" alt="chalkboard-science"
+                     srcset="http://scuola.janua.it/wp-content/uploads/2016/01/chalkboard-science-300x125.jpg 300w, http://scuola.janua.it/wp-content/uploads/2016/01/chalkboard-science-768x319.jpg 768w, http://scuola.janua.it/wp-content/uploads/2016/01/chalkboard-science-1024x426.jpg 1024w, http://scuola.janua.it/wp-content/uploads/2016/01/chalkboard-science.jpg 2048w"
+                     sizes="(max-width: 1024px) 100vw, 1024px"/>
+
+            </div>
+
+
+        </div>
+
+        <div id="slider-panels">
+            <div class="container">
+                <div class="row">
+
+                    <h2>Education from the Inside Out.</h2>
+
+                    <div class="col-sm-2">
+                        <div id="1" class="slider-panel">
+                            <a href="http://scuola.janua.it/parent-and-child/">
+                                <p>Scuola dell'infanzia
+                                    <span>con sezione primavera</span></p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div id="2" class="slider-panel">
+                            <a href="http://scuola.janua.it/preschool/">
+                                <p>Ciclo I-VIII classe
+                                    <span>scuola primaria e secondaria</span></p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div id="3" class="slider-panel">
+                            <a href="http://scuola.janua.it/kindergarten/">
+                                <p>Didattica Speciale
+                                    <span>percorsi personalizzati</span></p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div id="4" class="slider-panel">
+                            <a href="http://scuola.janua.it/lower-school/">
+                                <p>Scuola di musica
+                                    <span>pomeridiana</span></p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div id="5" class="slider-panel">
+                            <a href="http://scuola.janua.it/middle-school/">
+                                <p>Corso di specializzazione
+                                    <span>alla pedagogia di Rudolf Steiner</span></p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div id="home-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-12">
+                    <main>
+                        <h1>Welcome to the Janua Waldorf School</h1>
+
+                        <p><em>Education from the Inside Out.</em></p>
+
+                        <p>Since 1981, the Janua Waldorf School has provided a proven alternative in education for
+                            children from preschool, kindergarten to Grade 8.  The Waldorf approach works from the
+                            inside out, focusing on giving children a deep confidence in their own learning process, and
+                            having a deep sense of wonder and respect for life and learning. Learn more about why so
+                            many parents like you, choose Waldorf education.</p>
+
+                        <p>We’ve built over 35 years of experience educating young minds from the earliest ages. Our
+                            early years programs are comfortable and home-like, providing a safe and happy learning
+                            environment for Pre-K children, while our Lower and Middle School programs are focused on
+                            each stage of a child’s development in these important years.</p>
+
+                        <p>Come and discover why JANUA could just be the perfect alternative for your child.</p>
+
+                        <p style="text-align: left;"><a class="button" href="http://scuola.janua.it/visit-us/"
+                                                        style="background-color: #009DDC;">BOOK A TOUR</a></p>
+
+                        <h2>WALDORF&#8230;PREPARING YOUR CHILD FOR LIFE</h2>
+
+                        <p>
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/YqjKRJ6-PDU"
+                                    frameborder="0" allowfullscreen></iframe>
+                        </p>
+                    </main>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="testimonials">
+        <div id="testimonials-overlay">
+
+            <h2>Testimonials</h2>
+
+            <div class="testimonial-slideshow" data-cycle-fx=fade data-cycle-timeout=8000
+                 data-cycle-pause-on-hover="true" data-cycle-slides="> .testimonial">
+
+
+                <div class="testimonial">
+
+                    <p style="text-align: center;">The faculty at the Janua Waldorf School are fantastic.  They are
+                        approachable and available to talk when we need it.  I just love the holistic and balanced
+                        learning my child is receiving.  I can see the leaders of our future developing here!.</p>
+
+                    <p style="text-align: center;">-Gabriele K, Janua Waldorf School Parent</p>
+
+                    <p style="text-align: center;"><a class="button" href="http://scuola.janua.it/visit-us/"
+                                                      style="background-color: #009DDC;">BOOK A TOUR</a></p>
+
+                </div>
+
+                <div class="testimonial">
+
+                    <p style="text-align: center;">My son transferred from public school into Grade 2 at the Janua
+                        Waldorf School.  I am so pleased to see how his self-esteem has grown and how he is finally
+                        coming out of his shell.  I am so relieved we decided to send him to JANUA.</p>
+
+                    <p style="text-align: center;">&#8211; S.K., Janua Waldorf School Parent</p>
+
+                    <p style="text-align: center;"><a class="button" href="http://scuola.janua.it/visit-us/"
+                                                      style="background-color: #009DDC;">BOOK A TOUR</a></p>
+
+                </div>
+
+                <div class="testimonial">
+
+                    <p style="text-align: center;">My 8 year old read an entire children&#8217;s novel all on his own!
+                         I am so amazed at how he just naturally began to read!  And he even understood it!  The Waldorf
+                        approach to learning really is working.   I am seeing it unfold before my eyes!</p>
+
+                    <p style="text-align: center;">&#8211; Michael R., Janua Waldorf School Parent</p>
+
+                    <p style="text-align: center;"><a class="button" href="http://scuola.janua.it/visit-us/"
+                                                      style="background-color: #009DDC;">BOOK A TOUR</a></p>
+
+                </div>
+
+                <div class="testimonial">
+
+                    <p style="text-align: center;">We have had 3 children in the Janua Waldorf School for the past 3
+                        years. We are so pleased with the dedication and commitment of our faculty and staff to create a
+                        warm and loving learning environment. Our children are always excited to get up and go to school
+                        each morning.</p>
+
+                    <p style="text-align: center;">&#8211; Warren Houston, Janua Waldorf School Parent</p>
+
+                    <p style="text-align: center;"><a class="button" href="http://scuola.janua.it/visit-us/"
+                                                      style="background-color: #009DDC;">BOOK A TOUR</a></p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="gallery">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h2>Life at Waldorf</h2>
+                </div>
+                <div class="gallery col-xs-6 col-sm-3">
+
+                    <div data-cycle-fx="fade" data-cycle-loader="wait" data-cycle-timeout="7968"
+                         data-cycle-slides="> .gallery-item">
+
+                        <div class="gallery-item">
+                            <a class="gallery-group"
+                               href="http://scuola.janua.it/wp-content/uploads/2016/02/chalkboard-drawing2-copy.jpg"><img
+                                    src="http://scuola.janua.it/wp-content/uploads/2016/02/chalkboard-drawing2-copy-232x232.jpg"
+                                    alt="Chalkboard Drawing"/></a>
+                        </div>
+
+
+                        <div class="gallery-item">
+                            <a class="gallery-group"
+                               href="http://scuola.janua.it/wp-content/uploads/2016/02/micheal-maas-3.jpeg"><img
+                                    src="http://scuola.janua.it/wp-content/uploads/2016/02/micheal-maas-3-232x232.jpeg"
+                                    alt="Pumpkin" /></a>
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <div class="gallery col-xs-6 col-sm-3">
+
+                    <div data-cycle-fx="fade" data-cycle-loader="wait" data-cycle-timeout="8484"
+                         data-cycle-slides="> .gallery-item">
+
+                        <div class="gallery-item">
+                            <a class="gallery-group"
+                               href="http://scuola.janua.it/wp-content/uploads/2016/02/IMG_2797.jpg"><img
+                                    src="http://scuola.janua.it/wp-content/uploads/2016/02/IMG_2797-232x232.jpg"
+                                    alt="Wood Working" /></a>
+                        </div>
+
+
+                        <div class="gallery-item">
+                            <a class="gallery-group"
+                               href="http://scuola.janua.it/wp-content/uploads/2016/01/Waldorf-3.jpg"><img
+                                    src="http://scuola.janua.it/wp-content/uploads/2016/01/Waldorf-3-232x232.jpg"
+                                    alt="Kids Cutting Vegetables" /></a>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+                <div class="gallery col-xs-6 col-sm-3">
+
+                    <div class="3" data-cycle-fx="fade" data-cycle-loader="wait" data-cycle-timeout="8375"
+                         data-cycle-slides="> .gallery-item">
+
+
+                        <div class="gallery-item">
+                            <a class="gallery-group"
+                               href="http://scuola.janua.it/wp-content/uploads/2016/01/Waldorf-2.jpg"><img
+                                    src="http://scuola.janua.it/wp-content/uploads/2016/01/Waldorf-2-232x232.jpg"
+                                    alt="Janua Kindergarten Program" /></a>
+                        </div>
+
+
+                        <div class="gallery-item">
+                            <a class="gallery-group"
+                               href="http://scuola.janua.it/wp-content/uploads/2016/01/dragon7.jpg"><img
+                                    src="http://scuola.janua.it/wp-content/uploads/2016/01/dragon7-232x232.jpg"
+                                    alt="Michaelmas Play" /></a>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+                <div class="gallery col-xs-6 col-sm-3">
+
+                    <div class="4" data-cycle-fx="fade" data-cycle-loader="wait" data-cycle-timeout="7295"
+                         data-cycle-slides="> .gallery-item">
+
+                        <div class="gallery-item">
+                            <a class="gallery-group"
+                               href="http://scuola.janua.it/wp-content/uploads/2016/02/garden-photo.jpg"><img
+                                    src="http://scuola.janua.it/wp-content/uploads/2016/02/garden-photo-232x232.jpg"
+                                    alt="Flowers"/></a>
+                        </div>
+
+
+                        <div class="gallery-item">
+                            <a class="gallery-group"
+                               href="http://scuola.janua.it/wp-content/uploads/2016/01/girls-on-playground.jpg"><img
+                                    src="http://scuola.janua.it/wp-content/uploads/2016/01/girls-on-playground-232x232.jpg"
+                                    alt="Kids Playground" /></a>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+                <div class="gallery col-xs-6 col-sm-3">
+
+                    <div class="5" data-cycle-fx="fade" data-cycle-loader="wait" data-cycle-timeout="6353"
+                         data-cycle-slides="> .gallery-item">
+
+
+                        <div class="gallery-item">
+                            <a class="gallery-group"
+                               href="http://scuola.janua.it/wp-content/uploads/2016/01/lower-school-v2-final.jpg"><img
+                                    src="http://scuola.janua.it/wp-content/uploads/2016/01/lower-school-v2-final-232x232.jpg"
+                                    alt="Janua Lower School" /></a>
+                        </div>
+
+
+                        <div class="gallery-item">
+                            <a class="gallery-group"
+                               href="http://scuola.janua.it/wp-content/uploads/2016/02/DSC_4604.jpg"><img
+                                    src="http://scuola.janua.it/wp-content/uploads/2016/02/DSC_4604-232x232.jpg"
+                                    alt="Young Girl Face" /></a>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+                <div class="gallery col-xs-6 col-sm-3">
+
+                    <div class="6" data-cycle-fx="fade" data-cycle-loader="wait" data-cycle-timeout="6442"
+                         data-cycle-slides="> .gallery-item">
+
+
+                        <div class="gallery-item">
+                            <a class="gallery-group"
+                               href="http://scuola.janua.it/wp-content/uploads/2016/01/Waldorf-4.jpg"><img
+                                    src="http://scuola.janua.it/wp-content/uploads/2016/01/Waldorf-4-232x232.jpg"
+                                    alt="Janua Playground" /></a>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+                <div class="gallery col-xs-6 col-sm-3">
+
+                    <div class="7" data-cycle-fx="fade" data-cycle-loader="wait" data-cycle-timeout="9594"
+                         data-cycle-slides="> .gallery-item">
+
+
+                        <div class="gallery-item">
+                            <a class="gallery-group"
+                               href="http://scuola.janua.it/wp-content/uploads/2016/01/Waldorf-5.jpg"><img
+                                    src="http://scuola.janua.it/wp-content/uploads/2016/01/Waldorf-5-232x232.jpg"
+                                    alt="The World is Good" /></a>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+                <div class="gallery col-xs-6 col-sm-3">
+
+                    <div class="8" data-cycle-fx="fade" data-cycle-loader="wait" data-cycle-timeout="9465"
+                         data-cycle-slides="> .gallery-item">
+
+                        <div class="gallery-item">
+                            <a class="gallery-group"
+                               href="http://scuola.janua.it/wp-content/uploads/2016/01/contact-banner.jpg"><img
+                                    src="http://scuola.janua.it/wp-content/uploads/2016/01/contact-banner-232x232.jpg"
+                                    alt="contact-banner" /></a>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="push"></div>
+</div>
+{% endblock %}

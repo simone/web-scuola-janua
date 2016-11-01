@@ -1,0 +1,236 @@
+/* Responsive CSS */
+
+/* tablets - portrait */
+@media(max-width: 1024px) {
+
+	/* global */
+	h1, h1 a {
+		font-size: 32px;
+	}
+	h2, h2 a {
+		font-size: 28px;
+	}
+	h3, h3 a {
+		font-size: 24px;
+	}
+	h4, h4 a {
+		font-size: 20px;
+	}
+	h5, h5 a {
+		font-size: 16px;
+	}
+	h6, h6 a {
+		font-size: 14px;
+	}
+
+	#logo {
+		max-height: none;
+	}
+
+	/* slider */
+	#slider {
+		height: auto;
+	}
+
+	/* slider panels */
+	#slider-panels {}
+
+	#slider-panels > .container > .row > div[class*="col"] {
+		display: none;
+		visibility: hidden;
+	}
+	#slider-panels > .container > .row > h2 {
+		right: 5%;
+	}
+
+	/* banner */
+	#banner > #banner-overlay > h1 {
+		font-size: 32px;
+	}
+
+	/* programs nav */
+	#programs-nav {
+		height: auto;
+	}
+	#programs-nav > .container > .row {
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+	#programs-nav > .container > .row > div[class*="col"] > ul > li {
+		display: block;
+		margin: 0 0 .75em;
+		line-height: 2.5em;
+		border-radius: 10px;
+		border: thin solid #fff;
+	}
+	#programs-nav > .container > .row > div[class*="col"] > ul > li:first-child {
+		border-radius: 10px;
+		border: thin solid #fff;
+	}
+
+}
+
+/* smartphones - landscape */
+@media(max-width: 768px) {
+
+	/* global */
+	.container {
+		max-width: 100%;
+	}
+	#wrapper {
+		margin: 0 auto !important;
+	}
+
+	h1, h1 a {
+		font-size: 24px;
+	}
+	h2, h2 a {
+		font-size: 22px;
+	}
+	h3, h3 a {
+		font-size: 20px;
+	}
+	h4, h4 a {
+		font-size: 18px;
+	}
+	h5, h5 a {
+		font-size: 16px;
+	}
+	h6, h6 a {
+		font-size: 14px;
+	}
+
+	/* sub nav */
+	#sub-nav ul {
+		text-align: center;
+	}
+	#sub-nav ul > li > a {
+		font-size: 13px;
+		text-transform: none;
+	}
+
+	/* top bar */
+	#top-bar > .container > .row > div[class*="col"] {
+		padding-top: 5px;
+		padding-bottom: 5px;
+	}
+	#top-bar > .container > .row > div[class*="col"] > p {
+		text-align: center;
+		line-height: 1.75em;
+	}
+
+	/* header */
+	#main-header {
+		height: auto;
+	}
+
+	/* logo */
+	#logo {
+		padding-top: 10px;
+	}
+
+	/* main nav */
+	#main-nav {
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+
+	/* sub nav */
+	#sub-nav ul > li > a {
+		font-size: 12px;
+	}
+
+	/* slider panels */
+	#slider {
+		/* height: 300px; */
+	}
+	#slider-panels {
+		left: 0;
+		right: 10px;
+		bottom: 15px;
+		transform: translate(0);
+		-webkit-transform: translate(0);
+	}
+	#slider-panels > .container > .row > h2 {
+		font-size: 26px;
+		position: static;
+		text-align: right;
+		margin-right: 10px;
+		white-space: nowrap;
+	}
+	#banner > #banner-overlay > h1 {
+		font-size: 30px;
+	}
+
+	/* testimonials */
+	#testimonials > #testimonials-overlay > div > .testimonial p {
+		font-size: 16px;
+	}
+
+	/* SHORTCODES */
+
+	/* feature */
+	.feature > div {
+		width: 100%;
+	}
+	.feature > div:first-child {
+		width: 100%;
+	}
+
+	/* footer */
+
+	#push, footer {
+		height: auto;
+	}
+	footer > .container > .row > div[class*="col"] {
+		padding-top: 10px;
+	}
+	footer > .container > .row > div[class*="col"]:last-of-type {
+		padding-top: 10px;
+	}
+	footer > .container > .row > div[class*="col"] > .widget > div {
+		#text-align: left;
+	}
+	footer > .container > .row > div[class*="col"] p {
+		#text-align: left;
+	}
+
+}
+
+/* smartphones - portrait */
+@media (max-width: 375px) {
+
+	/* top bar */
+	#sub-nav ul > li {
+		margin: 0 0 0 0.5%;
+	}
+
+	/* slider */
+	#slider {
+		height: auto;
+	}
+	#slider-panels > .container > .row > h2 {
+		font-size: 20px;
+	}
+
+	#home-content main iframe {
+		height: 250px;
+	}
+
+	/* gallery */
+	#gallery {
+		display: none;
+		visibility: hidden;
+	}
+
+	/* footer */
+	#footer-bar {
+		height: auto;
+	}
+	#footer-bar > .container > .row > div[class*="col"] > p {
+		font-size: 10px;
+		text-align: center;
+	}
+
+
+}

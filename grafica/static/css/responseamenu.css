@@ -1,0 +1,80 @@
+#responseamenu_trigger {
+	width: 30px;
+	height: 17px;
+	z-index: 1000;
+	display: block;
+	cursor: pointer;
+	position: absolute;
+}
+
+#responseamenu_trigger > span {
+	width: 100%;
+	height: 3px;
+	display: block;
+	margin-bottom: 5px;
+	background: #333333;
+}
+
+#responseamenu_slideTrigger {}
+#responseamenu_slide {
+	top: 0px;
+	left: 0px;
+	height: 100%;
+	width: 300px;
+	z-index: 100000;
+	position: fixed;
+	overflow-y: scroll;
+	background: #464646;
+}
+/* menu bars */
+#menu-main-menu .responseamenu_slideTrigger::before {
+	content: "\f0c9  ";
+	text-rendering: auto;
+	-moz-osx-font-smoothing: grayscale;
+	font: normal normal normal 22px/1 FontAwesome;
+}
+
+#responseamenu_slide > div {
+	padding: 20px 30px;
+	background: #464646;
+}
+#responseamenu_slide > div:first-child {
+	padding: 15px 30px 10px
+}
+#responseamenu_slide > div:first-child > a {
+	width: 100%;
+	color: #FFFFFF;
+	display: block;
+	text-align: left;
+	position: relative;
+	text-decoration: none;
+	background: url("../images/layout/menu-arrow.png") no-repeat right center;
+}
+/* remove bars on slide */
+#responseamenu_slide > div:first-child > a.responseamenu_slideTrigger::before {
+	content: "";
+}
+#responseamenu_slide > div + div {
+	background: #fff;
+	text-align: left;
+}
+#responseamenu_slide > div + div > a {
+	clear: both;
+	color: #464646;
+	display: block;
+	position: relative;
+	margin-bottom: 10px;
+	text-decoration: none;
+}
+#responseamenu_slide > div + div > a:hover {
+	color: inherit;
+}
+.responseamenu_slideTrigger {
+	color: #333;
+	font-size: 22px;
+	text-decoration: none;
+	padding: 15px 0 10px 0;
+}
+.responseamenu_slideTrigger:hover {
+	color: inherit;
+}

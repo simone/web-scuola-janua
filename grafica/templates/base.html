@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="{{ LANGUAGE_CODE }}"{% if LANGUAGE_BIDI %} dir="rtl"{% endif %}>
+{% load pages_tags mezzanine_tags i18n staticfiles %}
+
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="keywords" content="{% block meta_keywords %}{% endblock %}">
+<meta name="description" content="{% block meta_description %}{% endblock %}">
+<title>{% block meta_title %}{% endblock %}{% if settings.SITE_TITLE %} | {{ settings.SITE_TITLE }}{% endif %}</title>
+<link rel="shortcut icon" href="{% static 'favicon.ico' %}">
+
+
+<meta property="og:locale" content="{{ LANGUAGE_CODE }}"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="{% block meta_og_title %}{% endblock %}{% if settings.SITE_TITLE %} | {{ settings.SITE_TITLE }}{% endif %}"/>
+<meta property="og:description" content="{% block meta_og_description %}{% endblock %}"/>
+<meta property="og:url" content="http://{{ request.get_host }}/"/>
+<meta property="og:site_name" content="{{ settings.SITE_TITLE }}"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:description" content="{% block meta_twitter_description %}{% endblock %}"/>
+<meta name="twitter:title" content="{% block meta_twitter_title %}{% endblock %}{% if settings.SITE_TITLE %} | {{ settings.SITE_TITLE }}{% endif %}"/>
+
+{% ifinstalled mezzanine.blog %}
+<link rel="alternate" type="application/rss+xml" title="RSS" href="{% url "blog_post_feed" "rss" %}">
+<link rel="alternate" type="application/atom+xml" title="Atom" href="{% url "blog_post_feed" "atom" %}">
+{% endifinstalled %}
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.0/themes/smoothness/theme.min.css'
+      type='text/css' media='all'/>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"
+      integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
+
+
+{% compress css %}
+<link rel='stylesheet' href="{% static 'css/fonts.css' %}" type='text/css' media='all'/>
+<link rel='stylesheet' href="{% static 'css/global.css' %}" type='text/css' media='all'/>
+<link rel='stylesheet' href="{% static 'css/style.css' %}" type='text/css' media='all'/>
+<link rel='stylesheet' href="{% static 'css/responsive.css' %}" type='text/css' media='all'/>
+<link rel='stylesheet' href="{% static 'css/responseamenu.css' %}" type='text/css' media='all'/>
+<link rel='stylesheet' href="{% static 'css/colorbox.css' %}" type='text/css' media='all'/>
+{% if LANGUAGE_BIDI %}
+<link rel="stylesheet" href="{% static 'css/bootstrap-rtl.css' %}">
+{% endif %}
+{% ifinstalled cartridge.shop %}
+<link rel="stylesheet" href="{% static 'css/cartridge.css' %}">
+{% if LANGUAGE_BIDI %}
+<link rel="stylesheet" href="{% static 'css/cartridge.rtl.css' %}">
+{% endif %}
+{% endifinstalled %}
+{% block extra_css %}{% endblock %}
+{% endcompress %}
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+            integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"
+            integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/jquery.colorbox/1.6.4/jquery.colorbox-min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/jquery.colorbox/1.6.4/i18n/jquery.colorbox-it.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.6/lib/js/emojione.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/jquery.cycle2/2.1.6/jquery.cycle2.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js"></script>
+
+{% compress js %}
+<script src="{% static 'js/bootstrap-extras.js' %}"></script>
+<script type='text/javascript' src="{% static 'js/responseamenu.js' %}"></script>
+<script type='text/javascript' src="{% static 'js/scripts.js' %}"></script>
+{% block extra_js %}{% endblock %}
+{% endcompress %}
+
+<!--[if lt IE 9]>
+<script src="{% static 'js/html5shiv.js' %}"></script>
+<script src="{% static 'js/respond.min.js' %}"></script>
+<![endif]-->
+
+{% block extra_head %}{% endblock %}
+</head>
+
+<body id="{% block body_id %}body{% endblock %}" class="home page page-id-108 page-template-default">
+
+<div id="wrapper">
+    <!--
+    <section id="top-bar">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8">
+                    <nav id="sub-nav">
+                        <ul id="menu-sub-menu" class="sub-menu">
+                            <li id="menu-item-385"
+                                class="menu-item menu-item-type-post_type_archive menu-item-object-newsletters menu-item-385">
+                                <a href="http://scuola.janua.it/newsletters/">Newsletters</a></li>
+                            <li id="menu-item-103"
+                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-103"><a
+                                    href="http://scuola.janua.it/volunteering/">Volunteering</a></li>
+                            <li id="menu-item-104"
+                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-104"><a
+                                    href="http://scuola.janua.it/giving/">Giving</a></li>
+                            <li id="menu-item-105"
+                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-105"><a
+                                    href="http://scuola.janua.it/events/">Events</a></li>
+                            <li id="menu-item-106"
+                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-106"><a
+                                    href="http://scuola.janua.it/calendar/">Calendar</a></li>
+                            <li id="menu-item-107"
+                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-107"><a
+                                    href="http://scuola.janua.it/blog/">Blog</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-sm-4">
+                    <p><i class="fa fa-phone"></i> <a href="tel:+39065515938">(+39) 06-5515938</a> &emsp; <i
+                            class="fa fa-envelope-o"></i> <a href="mailto:scuola@janua.it">scuola@janua.it</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    -->
+    <header id="main-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <a id="logo" href="index.html"><img src="{% static 'images/layout/logo-resize.png' %}" alt=""/></a>
+                </div>
+                <div class="col-sm-8">
+                    <nav id="main-nav">
+                        <ul id="menu-main-menu" class="main-menu">
+                            <li id="menu-item-119"
+                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-119">
+                                <a href="index.html#">Who We Are</a>
+                                <ul class="sub-menu">
+                                    <li id="menu-item-173"
+                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-173">
+                                        <a href="http://scuola.janua.it/about-kelowna-waldorf-school/">About
+                                            JANUA</a></li>
+                                    <li id="menu-item-175"
+                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-175">
+                                        <a href="http://scuola.janua.it/is-kws-right-for-us/">Is JANUA Right for
+                                            Us?</a></li>
+                                    <li id="menu-item-177"
+                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-177">
+                                        <a href="http://scuola.janua.it/facilities/">Facilities</a></li>
+                                    <li id="menu-item-505"
+                                        class="menu-item menu-item-type-taxonomy menu-item-object-faculty_categories menu-item-505">
+                                        <a href="http://scuola.janua.it/faculty-categories/faculty/">Faculty</a>
+                                    </li>
+                                    <li id="menu-item-506"
+                                        class="menu-item menu-item-type-taxonomy menu-item-object-faculty_categories menu-item-506">
+                                        <a href="http://scuola.janua.it/faculty-categories/administration/">Administration</a>
+                                    </li>
+                                    <li id="menu-item-365"
+                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-365">
+                                        <a href="http://scuola.janua.it/board-of-trustees/">Board of Trustees</a>
+                                    </li>
+                                    <li id="menu-item-180"
+                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-180">
+                                        <a href="http://scuola.janua.it/careers/">Careers</a></li>
+                                </ul>
+                            </li>
+                            <li id="menu-item-120"
+                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-120">
+                                <a href="index.html#">Why Waldorf</a>
+                                <ul class="sub-menu">
+                                    <li id="menu-item-182"
+                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-182">
+                                        <a href="http://scuola.janua.it/what-is-waldorf/">What is Waldorf?</a>
+                                    </li>
+                                    <li id="menu-item-183"
+                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-183">
+                                        <a href="http://scuola.janua.it/why-waldorf-works-in-a-nutshell/">Why
+                                            Waldorf Works: In a Nutshell</a></li>
+                                    <li id="menu-item-598"
+                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-598">
+                                        <a href="http://scuola.janua.it/faq/">FAQ</a></li>
+                                </ul>
+                            </li>
+                            <li id="menu-item-121"
+                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-121">
+                                <a href="index.html#">Programs</a>
+                                <ul class="sub-menu">
+                                    <li id="menu-item-184"
+                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-184">
+                                        <a href="http://scuola.janua.it/program-overview/">Program Overview</a>
+                                    </li>
+                                    <li id="menu-item-299"
+                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-299">
+                                        <a href="http://scuola.janua.it/parent-and-child/">Parent and Child</a>
+                                    </li>
+                                    <li id="menu-item-301"
+                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-301">
+                                        <a href="http://scuola.janua.it/preschool/">Preschool</a></li>
+                                    <li id="menu-item-186"
+                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-186">
+                                        <a href="http://scuola.janua.it/kindergarten/">Kindergarten</a></li>
+                                    <li id="menu-item-187"
+                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-187">
+                                        <a href="http://scuola.janua.it/lower-school/">Lower School</a></li>
+                                    <li id="menu-item-188"
+                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-188">
+                                        <a href="http://scuola.janua.it/middle-school/">Middle School</a></li>
+                                    <li id="menu-item-300"
+                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-300">
+                                        <a href="http://scuola.janua.it/enrichment/">Enrichment</a></li>
+                                </ul>
+                            </li>
+                            <li id="menu-item-122"
+                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-122">
+                                <a href="index.html#">How To Apply</a>
+                                <ul class="sub-menu">
+                                    <li id="menu-item-190"
+                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-190">
+                                        <a href="http://scuola.janua.it/visit-us/">Visit Us</a></li>
+                                    <li id="menu-item-191"
+                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-191">
+                                        <a href="http://scuola.janua.it/tuition-and-fees/">Tuition and Fees</a>
+                                    </li>
+                                    <li id="menu-item-192"
+                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-192">
+                                        <a href="http://scuola.janua.it/tuition-assistance/">Tuition
+                                            Assistance</a></li>
+                                    <li id="menu-item-193"
+                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-193">
+                                        <a href="http://scuola.janua.it/testimonials/">Testimonials</a></li>
+                                </ul>
+                            </li>
+                            <li id="menu-item-123"
+                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-123">
+                                <a href="index.html#">Life At Waldorf</a>
+                                <ul class="sub-menu">
+                                    <li id="menu-item-366"
+                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-366">
+                                        <a href="http://scuola.janua.it/events/">Life at Waldorf</a></li>
+                                    <li id="menu-item-520"
+                                        class="menu-item menu-item-type-post_type_archive menu-item-object-newsletters menu-item-520">
+                                        <a href="http://scuola.janua.it/newsletters/">Newsletters</a></li>
+                                    <li id="menu-item-196"
+                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-196">
+                                        <a href="http://scuola.janua.it/school-store/">School Store</a></li>
+                                </ul>
+                            </li>
+                            <li id="menu-item-117"
+                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-117"><a
+                                    href="http://scuola.janua.it/contact/">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+<!--
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+<div class="container">
+<div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">{% trans "Toggle Navigation" %}</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </button>
+    {% block navbar_title %}
+    {% if settings.SITE_TITLE %}<a class="navbar-brand" href="/">{{ settings.SITE_TITLE }}</a>{% endif %}
+    {% if settings.SITE_TAGLINE %}<p class="navbar-text visible-lg">{{ settings.SITE_TAGLINE }}</p>{% endif %}
+    {% endblock%}
+</div>
+<div class="navbar-collapse collapse">
+    {% block navbar_search_form %}{% search_form "all" %}{% endblock %}
+    {% block navbar_dropdown_menu %}{% page_menu "pages/menus/dropdown.html" %}{% endblock%}
+</div>
+</div>
+</div>
+
+
+<div class="container">
+
+{% nevercache %}
+{% if messages %}
+<div class="messages">
+{% for message in messages %}
+<div class="alert alert-dismissable alert-{{ message.tags }}" data-alert="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    {{ message }}
+</div>
+{% endfor %}
+</div>
+{% endif %}
+{% endnevercache %}
+
+<h1>{% block title %}{% endblock %}</h1>
+
+<ul class="breadcrumb">
+{% spaceless %}
+{% block breadcrumb_menu %}{% page_menu "pages/menus/breadcrumb.html" %}{% endblock %}
+{% endspaceless %}
+</ul>
+
+</div>
+-->
+{% block main %}{% endblock %}
+
+<!--
+<div class="container">
+<div class="row">
+
+<div class="col-md-2 left">
+    {% block left_panel %}
+    <div class="panel panel-default tree">{% page_menu "pages/menus/tree.html" %}</div>
+    {% endblock %}
+</div>
+
+<div class="col-md-7 middle">
+
+</div>
+
+<div class="col-md-3 right">
+    {% nevercache %}
+    {% include "includes/language_selector.html" %}
+    {% include "includes/user_panel.html" %}
+    {% endnevercache %}
+    <div class="panel panel-default">
+    <div class="panel-body">
+    {% block right_panel %}
+    {% ifinstalled mezzanine.twitter %}
+    {% include "twitter/tweets.html" %}
+    {% endifinstalled %}
+    {% endblock %}
+    </div>
+    </div>
+</div>
+
+</div>
+</div>
+-->
+
+<footer>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-8">
+        {% page_menu "pages/menus/footer.html" %}
+        </div>
+         <div class="col-sm-4">
+            <div id="black-studio-tinymce-2" class="widget widget_black_studio_tinymce clearfix">
+                <div class="textwidget"><p><img class="size-full wp-image-292" src="{% static 'images/logo-footer.png' %}"
+                                                alt="logo-footer" width="190" height="86"/></p>
+
+                    <p>Coop. Soc. Pedagogica Steineriana Janua Onlus</p>
+                    <p>CF 12843561007</p>
+                    <p>P.le Ezio Tarantelli 18, 00144 Roma</p>
+
+                    <p>&nbsp;</p>
+
+                    <p>Tel: (+39) 06 5515938</p>
+
+                    <p>&nbsp;</p>
+                </div>
+            </div>
+            <p><a href="https://www.facebook.com/kelownawaldorfschool/" target="_blank"><i
+                    class="fa fa-facebook"></i></a> <a href="https://plus.google.com/106021102488629009481/about"
+                                                       target="_blank"><i class="fa fa-google-plus"></i></a> <a
+                    href="http://scuola.janua.it/blog/"><i class="fa fa-rss"></i></a></p>
+        </div>
+    </div>
+</div>
+    <section id="footer-bar">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <p>&copy; Janua Waldorf School &emsp;|&emsp; All rights reserved &emsp;|&emsp; <a
+                        href="http://scuola.janua.it/privacy-policy-and-accessibility/">Privacy Policy &amp;
+                    Accessibility</a></p>
+            </div>
+        </div>
+    </div>
+</section>
+</footer>
+
+
+{% block footer_js %}
+{% include "includes/footer_scripts.html" %}
+{% endblock %}
+
+</body>
+</html>
