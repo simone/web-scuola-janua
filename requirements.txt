@@ -17,7 +17,7 @@ httplib2==0.9.2
 icalendar==3.10
 jsonfield==1.0.3
 Mezzanine==4.2.1
-mezzanine-agenda==0.1.2
+#mezzanine-agenda==0.1.2
 -e git+https://github.com/georgeyk/mezzanine-instagram-gallery.git@a4543063634410488b0ca2b068cf44c7b5d151ea#egg=mezzanine_instagram_gallery
 oauthlib==2.0.0
 paramiko==1.17.2
