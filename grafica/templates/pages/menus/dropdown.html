@@ -1,37 +1,14 @@
 {% load i18n pages_tags %}
 {% spaceless %}
+
 {% if page_branch_in_menu %}
-
 {% if branch_level == 0 %}
-<ul class="nav navbar-nav">
-    {% for page in page_branch %}
-    {% if not has_home and page.is_primary and forloop.first %}
-    <li{% if on_home %} class="active"{% endif %} id="dropdown-menu-home">
-        <a href="{% url "home" %}">{% trans "Home" %}</a>
-    </li>
-    {% endif %}
-    {% if page.in_menu %}
-    <li class="{% if page.has_children_in_menu %}dropdown{% endif %}
-               {% if page.is_current_or_ascendant %}active{% endif %}"
-        id="{{ page.html_id }}">
-        <a href="{{ page.get_absolute_url }}"
-        {% if page.has_children_in_menu %}
-        class="dropdown-toggle disabled" data-toggle="dropdown"
-        {% endif %}>
-            {{ page.title }}
-            {% if page.has_children_in_menu %}<b class="caret"></b>{% endif %}
-        </a>
-        {% if page.has_children_in_menu %}{% page_menu page %}{% endif %}
-    </li>
-    {% endif %}
-    {% endfor %}
-</ul>
-
-{% else %}
-<ul class="dropdown-menu">
+<nav id="main-nav">
+    <ul id="menu-main-menu" class="main-menu">
     {% for page in page_branch %}
     {% if page.in_menu %}
-    <li class="{% if page.has_children_in_menu %}dropdown-submenu{% endif %}
+    <li class="menu-item menu-item-type-custom menu-item-object-custom
+               {% if page.has_children_in_menu %} menu-item-has-children{% endif %}
                {% if page.is_current_or_ascendant %}active{% endif %}"
         id="{{ page.html_id }}">
         <a href="{{ page.get_absolute_url }}">{{ page.title }}</a>
@@ -39,7 +16,35 @@
     </li>
     {% endif %}
     {% endfor %}
+    </ul>
+</nav>
+
+{% else %}
+{% if branch_level == 1 %}
+<ul class="sub-menu">
+    {% for page in page_branch %}
+    {% if page.in_menu %}
+    <li class="menu-item menu-item-type-post_type menu-item-object-page
+               {% if page.is_current_or_ascendant %}active{% endif %}"
+        id="{{ page.html_id }}">
+        <a href="{{ page.get_absolute_url }}">{{ page.title }}</a>
+    </li>
+    {% endif %}
+    {% if page.has_children_in_menu %}{% page_menu page %}{% endif %}
+    {% endfor %}
 </ul>
+{% else %}
+{% for page in page_branch %}
+    {% if page.in_menu %}
+    <li class="menu-item menu-item-type-post_type menu-item-object-page
+               {% if page.is_current_or_ascendant %}active{% endif %}"
+        id="{{ page.html_id }}">
+        <a href="{{ page.get_absolute_url }}">{{ page.title }}</a>
+    </li>
+    {% endif %}
+    {% if page.has_children_in_menu %}{% page_menu page %}{% endif %}
+    {% endfor %}
+{% endif %}
 {% endif %}
 
 {% endif %}

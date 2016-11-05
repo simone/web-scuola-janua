@@ -1,6 +1,15 @@
 {% extends "pages/page.html" %}
 
-{% load mezzanine_tags %}
+{% load mezzanine_tags i18n pages_tags %}
+
+{% block banner %}
+    {% if on_home %}
+        {% page_menu "pages/menus/slides.html" %}
+    {% else %}
+        {{ block.super }}
+        {% page_menu "pages/menus/banner.html" %}
+    {% endif %}
+{% endblock %}
 
 {% block main %}{{ block.super }}
 

@@ -42,11 +42,14 @@ from django.utils.translation import ugettext_lazy as _
 # menus a page should appear in. Note that if a menu template is used
 # that doesn't appear in this setting, all pages will appear in it.
 
-# PAGE_MENU_TEMPLATES = (
-#     (1, _("Top navigation bar"), "pages/menus/dropdown.html"),
-#     (2, _("Left-hand tree"), "pages/menus/tree.html"),
-#     (3, _("Footer"), "pages/menus/footer.html"),
-# )
+PAGE_MENU_TEMPLATES = (
+     (0, _("Top navigation bar"), "pages/menus/topbar.html"),
+     (1, _("Main Menu"), "pages/menus/dropdown.html"),
+     (2, _("Slides"), "pages/menus/slides.html"),
+     (3, _("Banner Menu"), "pages/menus/banner.html"),
+     (4, _("Footer"), "pages/menus/footer.html"),
+     (5, _("Static"), "pages/menus/static.html"),
+)
 
 # A sequence of fields that will be injected into Mezzanine's (or any
 # library's) models. Each item in the sequence is a four item sequence.
@@ -251,7 +254,8 @@ INSTALLED_APPS = (
     "mezzanine.forms",
     "mezzanine.galleries",
     "mezzanine.twitter",
-    "mezzanine_instagram_gallery"
+    "widget_tweaks", # x bootstrap forms
+    "post_office", # send email async - require uwsgi cron
     #"mezzanine.accounts",
     #"mezzanine.mobile",
 
@@ -305,6 +309,8 @@ OPTIONAL_APPS = (
     PACKAGE_NAME_GRAPPELLI,
 )
 
+EMAIL_BACKEND = 'post_office.EmailBackend'
+
 ##################
 # LOCAL SETTINGS #
 ##################
@@ -328,7 +334,7 @@ if os.path.exists(f):
     exec(open(f, "rb").read())
 
 
-SITE_NAME = "Scuola Janua"
+SITE_NAME = SITE_TITLE = "Scuola Janua"
 SITE_URL = "http://scuola.janua.it"
 
 

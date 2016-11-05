@@ -11,6 +11,7 @@
 <title>{% block meta_title %}{% endblock %}{% if settings.SITE_TITLE %} | {{ settings.SITE_TITLE }}{% endif %}</title>
 <link rel="shortcut icon" href="{% static 'favicon.ico' %}">
 
+<link rel="canonical" href="http://{{ request.get_host }}{{ request.path }}"/>
 
 <meta property="og:locale" content="{{ LANGUAGE_CODE }}"/>
 <meta property="og:type" content="website"/>
@@ -74,6 +75,8 @@
     <script type="text/javascript"
             src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js"></script>
 
+    <script async defer src="//platform.instagram.com/en_US/embeds.js"></script>
+
 {% compress js %}
 <script src="{% static 'js/bootstrap-extras.js' %}"></script>
 <script type='text/javascript' src="{% static 'js/responseamenu.js' %}"></script>
@@ -92,224 +95,298 @@
 <body id="{% block body_id %}body{% endblock %}" class="home page page-id-108 page-template-default">
 
 <div id="wrapper">
-    <!--
-    <section id="top-bar">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-8">
-                    <nav id="sub-nav">
-                        <ul id="menu-sub-menu" class="sub-menu">
-                            <li id="menu-item-385"
-                                class="menu-item menu-item-type-post_type_archive menu-item-object-newsletters menu-item-385">
-                                <a href="http://scuola.janua.it/newsletters/">Newsletters</a></li>
-                            <li id="menu-item-103"
-                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-103"><a
-                                    href="http://scuola.janua.it/volunteering/">Volunteering</a></li>
-                            <li id="menu-item-104"
-                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-104"><a
-                                    href="http://scuola.janua.it/giving/">Giving</a></li>
-                            <li id="menu-item-105"
-                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-105"><a
-                                    href="http://scuola.janua.it/events/">Events</a></li>
-                            <li id="menu-item-106"
-                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-106"><a
-                                    href="http://scuola.janua.it/calendar/">Calendar</a></li>
-                            <li id="menu-item-107"
-                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-107"><a
-                                    href="http://scuola.janua.it/blog/">Blog</a></li>
-                        </ul>
-                    </nav>
-                </div>
-                <div class="col-sm-4">
-                    <p><i class="fa fa-phone"></i> <a href="tel:+39065515938">(+39) 06-5515938</a> &emsp; <i
-                            class="fa fa-envelope-o"></i> <a href="mailto:scuola@janua.it">scuola@janua.it</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-    -->
+    {% block topbar %}{% page_menu "pages/menus/topbar.html" %}{% endblock %}
     <header id="main-header">
         <div class="container">
             <div class="row">
                 <div class="col-sm-4">
-                    <a id="logo" href="index.html"><img src="{% static 'images/layout/logo-resize.png' %}" alt=""/></a>
+                    <a id="logo" href="/"><img src="{% static 'images/layout/logo-resize.png' %}" alt=""/></a>
                 </div>
                 <div class="col-sm-8">
-                    <nav id="main-nav">
-                        <ul id="menu-main-menu" class="main-menu">
-                            <li id="menu-item-119"
-                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-119">
-                                <a href="index.html#">Who We Are</a>
-                                <ul class="sub-menu">
-                                    <li id="menu-item-173"
-                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-173">
-                                        <a href="http://scuola.janua.it/about-kelowna-waldorf-school/">About
-                                            JANUA</a></li>
-                                    <li id="menu-item-175"
-                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-175">
-                                        <a href="http://scuola.janua.it/is-kws-right-for-us/">Is JANUA Right for
-                                            Us?</a></li>
-                                    <li id="menu-item-177"
-                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-177">
-                                        <a href="http://scuola.janua.it/facilities/">Facilities</a></li>
-                                    <li id="menu-item-505"
-                                        class="menu-item menu-item-type-taxonomy menu-item-object-faculty_categories menu-item-505">
-                                        <a href="http://scuola.janua.it/faculty-categories/faculty/">Faculty</a>
-                                    </li>
-                                    <li id="menu-item-506"
-                                        class="menu-item menu-item-type-taxonomy menu-item-object-faculty_categories menu-item-506">
-                                        <a href="http://scuola.janua.it/faculty-categories/administration/">Administration</a>
-                                    </li>
-                                    <li id="menu-item-365"
-                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-365">
-                                        <a href="http://scuola.janua.it/board-of-trustees/">Board of Trustees</a>
-                                    </li>
-                                    <li id="menu-item-180"
-                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-180">
-                                        <a href="http://scuola.janua.it/careers/">Careers</a></li>
-                                </ul>
-                            </li>
-                            <li id="menu-item-120"
-                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-120">
-                                <a href="index.html#">Why Waldorf</a>
-                                <ul class="sub-menu">
-                                    <li id="menu-item-182"
-                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-182">
-                                        <a href="http://scuola.janua.it/what-is-waldorf/">What is Waldorf?</a>
-                                    </li>
-                                    <li id="menu-item-183"
-                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-183">
-                                        <a href="http://scuola.janua.it/why-waldorf-works-in-a-nutshell/">Why
-                                            Waldorf Works: In a Nutshell</a></li>
-                                    <li id="menu-item-598"
-                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-598">
-                                        <a href="http://scuola.janua.it/faq/">FAQ</a></li>
-                                </ul>
-                            </li>
-                            <li id="menu-item-121"
-                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-121">
-                                <a href="index.html#">Programs</a>
-                                <ul class="sub-menu">
-                                    <li id="menu-item-184"
-                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-184">
-                                        <a href="http://scuola.janua.it/program-overview/">Program Overview</a>
-                                    </li>
-                                    <li id="menu-item-299"
-                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-299">
-                                        <a href="http://scuola.janua.it/parent-and-child/">Parent and Child</a>
-                                    </li>
-                                    <li id="menu-item-301"
-                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-301">
-                                        <a href="http://scuola.janua.it/preschool/">Preschool</a></li>
-                                    <li id="menu-item-186"
-                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-186">
-                                        <a href="http://scuola.janua.it/kindergarten/">Kindergarten</a></li>
-                                    <li id="menu-item-187"
-                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-187">
-                                        <a href="http://scuola.janua.it/lower-school/">Lower School</a></li>
-                                    <li id="menu-item-188"
-                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-188">
-                                        <a href="http://scuola.janua.it/middle-school/">Middle School</a></li>
-                                    <li id="menu-item-300"
-                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-300">
-                                        <a href="http://scuola.janua.it/enrichment/">Enrichment</a></li>
-                                </ul>
-                            </li>
-                            <li id="menu-item-122"
-                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-122">
-                                <a href="index.html#">How To Apply</a>
-                                <ul class="sub-menu">
-                                    <li id="menu-item-190"
-                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-190">
-                                        <a href="http://scuola.janua.it/visit-us/">Visit Us</a></li>
-                                    <li id="menu-item-191"
-                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-191">
-                                        <a href="http://scuola.janua.it/tuition-and-fees/">Tuition and Fees</a>
-                                    </li>
-                                    <li id="menu-item-192"
-                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-192">
-                                        <a href="http://scuola.janua.it/tuition-assistance/">Tuition
-                                            Assistance</a></li>
-                                    <li id="menu-item-193"
-                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-193">
-                                        <a href="http://scuola.janua.it/testimonials/">Testimonials</a></li>
-                                </ul>
-                            </li>
-                            <li id="menu-item-123"
-                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-123">
-                                <a href="index.html#">Life At Waldorf</a>
-                                <ul class="sub-menu">
-                                    <li id="menu-item-366"
-                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-366">
-                                        <a href="http://scuola.janua.it/events/">Life at Waldorf</a></li>
-                                    <li id="menu-item-520"
-                                        class="menu-item menu-item-type-post_type_archive menu-item-object-newsletters menu-item-520">
-                                        <a href="http://scuola.janua.it/newsletters/">Newsletters</a></li>
-                                    <li id="menu-item-196"
-                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-196">
-                                        <a href="http://scuola.janua.it/school-store/">School Store</a></li>
-                                </ul>
-                            </li>
-                            <li id="menu-item-117"
-                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-117"><a
-                                    href="http://scuola.janua.it/contact/">Contact</a></li>
-                        </ul>
-                    </nav>
+                    {% page_menu "pages/menus/dropdown.html" %}
                 </div>
             </div>
         </div>
     </header>
 
-<!--
-<div class="navbar navbar-default navbar-fixed-top" role="navigation">
-<div class="container">
-<div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="sr-only">{% trans "Toggle Navigation" %}</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-    </button>
-    {% block navbar_title %}
-    {% if settings.SITE_TITLE %}<a class="navbar-brand" href="/">{{ settings.SITE_TITLE }}</a>{% endif %}
-    {% if settings.SITE_TAGLINE %}<p class="navbar-text visible-lg">{{ settings.SITE_TAGLINE }}</p>{% endif %}
-    {% endblock%}
-</div>
-<div class="navbar-collapse collapse">
-    {% block navbar_search_form %}{% search_form "all" %}{% endblock %}
-    {% block navbar_dropdown_menu %}{% page_menu "pages/menus/dropdown.html" %}{% endblock%}
-</div>
-</div>
+{% block banner %}{% endblock %}
+
+<div id="home-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-12">
+                <main>
+                    {% block main %}{% endblock %}
+                </main>
+            </div>
+        </div>
+    </div>
 </div>
 
 
-<div class="container">
+{% block testimonials %}
+    <div id="testimonials">
+        <div id="testimonials-overlay">
 
-{% nevercache %}
-{% if messages %}
-<div class="messages">
-{% for message in messages %}
-<div class="alert alert-dismissable alert-{{ message.tags }}" data-alert="alert">
-    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-    {{ message }}
-</div>
-{% endfor %}
-</div>
-{% endif %}
-{% endnevercache %}
+            <h2>Testimonials</h2>
 
-<h1>{% block title %}{% endblock %}</h1>
+            <div class="testimonial-slideshow" data-cycle-fx=fade data-cycle-timeout=8000
+                 data-cycle-pause-on-hover="true" data-cycle-slides="> .testimonial">
 
-<ul class="breadcrumb">
-{% spaceless %}
-{% block breadcrumb_menu %}{% page_menu "pages/menus/breadcrumb.html" %}{% endblock %}
-{% endspaceless %}
-</ul>
 
-</div>
--->
-{% block main %}{% endblock %}
+                <div class="testimonial">
+
+                    <p style="text-align: center;">The faculty at the Janua Waldorf School are fantastic.  They are
+                        approachable and available to talk when we need it.  I just love the holistic and balanced
+                        learning my child is receiving.  I can see the leaders of our future developing here!.</p>
+
+                    <p style="text-align: center;">-Gabriele K, Janua Waldorf School Parent</p>
+
+                    <p style="text-align: center;"><a class="button" href="http://scuola.janua.it/visit-us/"
+                                                      style="background-color: #009DDC;">BOOK A TOUR</a></p>
+
+                </div>
+
+                <div class="testimonial">
+
+                    <p style="text-align: center;">My son transferred from public school into Grade 2 at the Janua
+                        Waldorf School.  I am so pleased to see how his self-esteem has grown and how he is finally
+                        coming out of his shell.  I am so relieved we decided to send him to JANUA.</p>
+
+                    <p style="text-align: center;">&#8211; S.K., Janua Waldorf School Parent</p>
+
+                    <p style="text-align: center;"><a class="button" href="http://scuola.janua.it/visit-us/"
+                                                      style="background-color: #009DDC;">BOOK A TOUR</a></p>
+
+                </div>
+
+                <div class="testimonial">
+
+                    <p style="text-align: center;">My 8 year old read an entire children&#8217;s novel all on his own!
+                         I am so amazed at how he just naturally began to read!  And he even understood it!  The Waldorf
+                        approach to learning really is working.   I am seeing it unfold before my eyes!</p>
+
+                    <p style="text-align: center;">&#8211; Michael R., Janua Waldorf School Parent</p>
+
+                    <p style="text-align: center;"><a class="button" href="http://scuola.janua.it/visit-us/"
+                                                      style="background-color: #009DDC;">BOOK A TOUR</a></p>
+
+                </div>
+
+                <div class="testimonial">
+
+                    <p style="text-align: center;">We have had 3 children in the Janua Waldorf School for the past 3
+                        years. We are so pleased with the dedication and commitment of our faculty and staff to create a
+                        warm and loving learning environment. Our children are always excited to get up and go to school
+                        each morning.</p>
+
+                    <p style="text-align: center;">&#8211; Warren Houston, Janua Waldorf School Parent</p>
+
+                    <p style="text-align: center;"><a class="button" href="http://scuola.janua.it/visit-us/"
+                                                      style="background-color: #009DDC;">BOOK A TOUR</a></p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block gallery %}
+    <div id="gallery">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h2>Vita a scuola</h2>
+                </div>
+
+                <div class="gallery col-xs-6 col-sm-3">
+
+                    <div data-cycle-fx="fade" data-cycle-loader="wait" data-cycle-timeout="7968"
+                         data-cycle-slides="> .gallery-item">
+
+                        <div class="gallery-item">
+                            <a class="gallery-group"
+                               href="http://scuola.janua.it/wp-content/uploads/2016/02/chalkboard-drawing2-copy.jpg"><img
+                                    src="http://scuola.janua.it/wp-content/uploads/2016/02/chalkboard-drawing2-copy-232x232.jpg"
+                                    alt="Chalkboard Drawing"/></a>
+                        </div>
+
+
+                        <div class="gallery-item">
+                            <a class="gallery-group"
+                               href="http://scuola.janua.it/wp-content/uploads/2016/02/micheal-maas-3.jpeg"><img
+                                    src="http://scuola.janua.it/wp-content/uploads/2016/02/micheal-maas-3-232x232.jpeg"
+                                    alt="Pumpkin" /></a>
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <div class="gallery col-xs-6 col-sm-3">
+
+                    <div data-cycle-fx="fade" data-cycle-loader="wait" data-cycle-timeout="8484"
+                         data-cycle-slides="> .gallery-item">
+
+                        <div class="gallery-item">
+                            <a class="gallery-group"
+                               href="http://scuola.janua.it/wp-content/uploads/2016/02/IMG_2797.jpg"><img
+                                    src="http://scuola.janua.it/wp-content/uploads/2016/02/IMG_2797-232x232.jpg"
+                                    alt="Wood Working" /></a>
+                        </div>
+
+
+                        <div class="gallery-item">
+                            <a class="gallery-group"
+                               href="http://scuola.janua.it/wp-content/uploads/2016/01/Waldorf-3.jpg"><img
+                                    src="http://scuola.janua.it/wp-content/uploads/2016/01/Waldorf-3-232x232.jpg"
+                                    alt="Kids Cutting Vegetables" /></a>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+                <div class="gallery col-xs-6 col-sm-3">
+
+                    <div class="3" data-cycle-fx="fade" data-cycle-loader="wait" data-cycle-timeout="8375"
+                         data-cycle-slides="> .gallery-item">
+
+
+                        <div class="gallery-item">
+                            <a class="gallery-group"
+                               href="http://scuola.janua.it/wp-content/uploads/2016/01/Waldorf-2.jpg"><img
+                                    src="http://scuola.janua.it/wp-content/uploads/2016/01/Waldorf-2-232x232.jpg"
+                                    alt="Janua Kindergarten Program" /></a>
+                        </div>
+
+
+                        <div class="gallery-item">
+                            <a class="gallery-group"
+                               href="http://scuola.janua.it/wp-content/uploads/2016/01/dragon7.jpg"><img
+                                    src="http://scuola.janua.it/wp-content/uploads/2016/01/dragon7-232x232.jpg"
+                                    alt="Michaelmas Play" /></a>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+                <div class="gallery col-xs-6 col-sm-3">
+
+                    <div class="4" data-cycle-fx="fade" data-cycle-loader="wait" data-cycle-timeout="7295"
+                         data-cycle-slides="> .gallery-item">
+
+                        <div class="gallery-item">
+                            <a class="gallery-group"
+                               href="http://scuola.janua.it/wp-content/uploads/2016/02/garden-photo.jpg"><img
+                                    src="http://scuola.janua.it/wp-content/uploads/2016/02/garden-photo-232x232.jpg"
+                                    alt="Flowers"/></a>
+                        </div>
+
+
+                        <div class="gallery-item">
+                            <a class="gallery-group"
+                               href="http://scuola.janua.it/wp-content/uploads/2016/01/girls-on-playground.jpg"><img
+                                    src="http://scuola.janua.it/wp-content/uploads/2016/01/girls-on-playground-232x232.jpg"
+                                    alt="Kids Playground" /></a>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+                <div class="gallery col-xs-6 col-sm-3">
+
+                    <div class="5" data-cycle-fx="fade" data-cycle-loader="wait" data-cycle-timeout="6353"
+                         data-cycle-slides="> .gallery-item">
+
+
+                        <div class="gallery-item">
+                            <a class="gallery-group"
+                               href="http://scuola.janua.it/wp-content/uploads/2016/01/lower-school-v2-final.jpg"><img
+                                    src="http://scuola.janua.it/wp-content/uploads/2016/01/lower-school-v2-final-232x232.jpg"
+                                    alt="Janua Lower School" /></a>
+                        </div>
+
+
+                        <div class="gallery-item">
+                            <a class="gallery-group"
+                               href="http://scuola.janua.it/wp-content/uploads/2016/02/DSC_4604.jpg"><img
+                                    src="http://scuola.janua.it/wp-content/uploads/2016/02/DSC_4604-232x232.jpg"
+                                    alt="Young Girl Face" /></a>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+                <div class="gallery col-xs-6 col-sm-3">
+
+                    <div class="6" data-cycle-fx="fade" data-cycle-loader="wait" data-cycle-timeout="6442"
+                         data-cycle-slides="> .gallery-item">
+
+
+                        <div class="gallery-item">
+                            <a class="gallery-group"
+                               href="http://scuola.janua.it/wp-content/uploads/2016/01/Waldorf-4.jpg"><img
+                                    src="http://scuola.janua.it/wp-content/uploads/2016/01/Waldorf-4-232x232.jpg"
+                                    alt="Janua Playground" /></a>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+                <div class="gallery col-xs-6 col-sm-3">
+
+                    <div class="7" data-cycle-fx="fade" data-cycle-loader="wait" data-cycle-timeout="9594"
+                         data-cycle-slides="> .gallery-item">
+
+
+                        <div class="gallery-item">
+                            <a class="gallery-group"
+                               href="http://scuola.janua.it/wp-content/uploads/2016/01/Waldorf-5.jpg"><img
+                                    src="http://scuola.janua.it/wp-content/uploads/2016/01/Waldorf-5-232x232.jpg"
+                                    alt="The World is Good" /></a>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+                <div class="gallery col-xs-6 col-sm-3">
+
+                    <div class="8" data-cycle-fx="fade" data-cycle-loader="wait" data-cycle-timeout="9465"
+                         data-cycle-slides="> .gallery-item">
+
+                        <div class="gallery-item">
+                            <a class="gallery-group"
+                               href="http://scuola.janua.it/wp-content/uploads/2016/01/contact-banner.jpg"><img
+                                    src="http://scuola.janua.it/wp-content/uploads/2016/01/contact-banner-232x232.jpg"
+                                    alt="contact-banner" /></a>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
 
 <!--
 <div class="container">
@@ -380,7 +457,7 @@
         <div class="row">
             <div class="col-sm-12">
                 <p>&copy; Janua Waldorf School &emsp;|&emsp; All rights reserved &emsp;|&emsp;
-                    <a href="/privacy-policy-and-accessibility/">Privacy Policy &amp; Accessibility</a></p>
+                    <a href="/privacy/">Privacy Policy</a></p>
             </div>
         </div>
     </div>

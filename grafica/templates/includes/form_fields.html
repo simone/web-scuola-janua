@@ -1,4 +1,4 @@
-{% load mezzanine_tags %}
+{% load mezzanine_tags widget_tweaks %}
 
 {% nevercache %}
 <input type="hidden" name="referrer" value="{{ request.META.HTTP_REFERER }}">
@@ -12,15 +12,15 @@
 <div class="form-group input_{{ field.id_for_label }} {{ field.field.type }}
     {% if field.errors %} has-error{% endif %}">
     {% if field.label %}<label class="control-label" for="{{ field.auto_id }}">{{ field.label }}</label>{% endif %}
-    {{ field }}
+    {{ field|attr:"class:form-control" }}
     {% if field.errors %}
-    <p class="help-block">
+    <small class="form-text text-muted help-block">
         {% for e in field.errors %}
         {% if not forloop.first %} / {% endif %}{{ e }}
         {% endfor %}
-    </p>
+    </small>
     {% elif field.help_text %}
-    <p class="help-block">{{ field.help_text }}</p>
+    <small class="form-text text-muted help-block">{{ field.help_text }}</small>
     {% endif %}
 </div>
 {% endif %}

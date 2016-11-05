@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 {% load mezzanine_tags keyword_tags %}
 
-{% block meta_title %}{{ page.meta_title }}{% endblock %}
 
 {% block meta_keywords %}{% metablock %}
 {% keywords_for page as keywords %}
@@ -11,13 +10,21 @@
 {% endfor %}
 {% endmetablock %}{% endblock %}
 
-{% block meta_description %}{% metablock %}
-{{ page.description }}
-{% endmetablock %}{% endblock %}
+{% block meta_title %}{{ page.meta_title }}{% endblock %}
+{% block meta_description %}{% metablock %}{{ page.description }}{% endmetablock %}{% endblock %}
 
-{% block title %}
-{% editable page.title %}{{ page.title }}{% endeditable %}
+{% block meta_og_title %}{{ page.meta_title }}{% endblock %}
+{% block meta_og_description %}{% metablock %}{{ page.description }}{% endmetablock %}{% endblock %}
+
+{% block meta_twitter_title %}{{ page.meta_title }}{% endblock %}
+{% block meta_twitter_description %}{% metablock %}{{ page.description }}{% endmetablock %}{% endblock %}
+
+{% block banner %}
+<section id="banner" style="background-image: url('http://www.kelownawaldorf.org/wp-content/uploads/2016/01/parent-child-optimized-1024x683.jpg');">
+	<div id="banner-overlay">
+		<h1>{% editable page.title %}{{ page.title }}{% endeditable %}</h1>
+	</div>
+</section>
 {% endblock %}
 
-{% block main %}
-{% endblock %}
+{% block main %}{% endblock %}

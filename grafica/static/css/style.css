@@ -707,3 +707,7 @@ footer > .container > .row > div[class*='col'] > .widget > div > p {
 #footer-bar > .container > .row > div[class*='col'] > p > a {
 	color: inherit;
 }
+
+.cc_message {
+    color: white;
+}
