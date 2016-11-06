@@ -1,121 +1,83 @@
-{% load i18n staticfiles %}
+{% load i18n staticfiles pages_tags %}
+{% spaceless %}
+
+{% if branch_level == 0 %}
 <div id="slider">
-
-        <div class="cycle-slideshow" data-cycle-fx="fade" data-cycle-loader="wait" data-cycle-timeout="8000"
-             data-cycle-pause-on-hover="true" data-cycle-slides="> div">
-
-            <div class="slide">
-
-                <img width="1024" height="640" src="{% static 'images/slides/slide1.jpg' %}"
-                     class="attachment-1024x1024x1 size-1024x1024x1" alt="default"
-                     srcset="{% static 'images/slides/slide1.jpg' %} 300w, {% static 'images/slides/slide1.jpg' %} 768w, {% static 'images/slides/slide1.jpg' %} 1024w, {% static 'images/slides/slide1.jpg' %} 1200w"
-                     sizes="(max-width: 1024px) 100vw, 1024px"/>
-
-            </div>
-
-
-            <div class="slide">
-
-
-                <img width="1024" height="683" src="{% static 'images/slides/slide2.jpg' %}"
-                     class="attachment-1024x1024x1 size-1024x1024x1" alt="parent-child-optimized"
-                     srcset="{% static 'images/slides/slide2.jpg' %} 300w, {% static 'images/slides/slide2.jpg' %} 768w, {% static 'images/slides/slide2.jpg' %} 1024w, {% static 'images/slides/slide2.jpg' %} 1200w"
-                     sizes="(max-width: 1024px) 100vw, 1024px"/>
-
-            </div>
-
-
-            <div class="slide">
-
-
-                <img width="1024" height="629" src="{% static 'images/slides/slide3.jpg' %}"
-                     class="attachment-1024x1024x1 size-1024x1024x1" alt="preschool-optimized"
-                     srcset="{% static 'images/slides/slide3.jpg' %} 300w, {% static 'images/slides/slide3.jpg' %} 768w, {% static 'images/slides/slide3.jpg' %} 1024w, {% static 'images/slides/slide3.jpg' %} 1200w"
-                     sizes="(max-width: 1024px) 100vw, 1024px"/>
-
-            </div>
-
-            <div class="slide">
-
-                <img width="1024" height="640" src="{% static 'images/slides/slide1.jpg' %}"
-                     class="attachment-1024x1024x1 size-1024x1024x1" alt="default"
-                     srcset="{% static 'images/slides/slide1.jpg' %} 300w, {% static 'images/slides/slide1.jpg' %} 768w, {% static 'images/slides/slide1.jpg' %} 1024w, {% static 'images/slides/slide1.jpg' %} 1200w"
-                     sizes="(max-width: 1024px) 100vw, 1024px"/>
-
-            </div>
-
-
-            <div class="slide">
-
-
-                <img width="1024" height="683" src="{% static 'images/slides/slide2.jpg' %}"
-                     class="attachment-1024x1024x1 size-1024x1024x1" alt="parent-child-optimized"
-                     srcset="{% static 'images/slides/slide2.jpg' %} 300w, {% static 'images/slides/slide2.jpg' %} 768w, {% static 'images/slides/slide2.jpg' %} 1024w, {% static 'images/slides/slide2.jpg' %} 1200w"
-                     sizes="(max-width: 1024px) 100vw, 1024px"/>
-
-            </div>
-
-
-            <div class="slide">
-
-
-                <img width="1024" height="629" src="{% static 'images/slides/slide3.jpg' %}"
-                     class="attachment-1024x1024x1 size-1024x1024x1" alt="preschool-optimized"
-                     srcset="{% static 'images/slides/slide3.jpg' %} 300w, {% static 'images/slides/slide3.jpg' %} 768w, {% static 'images/slides/slide3.jpg' %} 1024w, {% static 'images/slides/slide3.jpg' %} 1200w"
-                     sizes="(max-width: 1024px) 100vw, 1024px"/>
-
-            </div>
-
+    <div class="cycle-slideshow" data-cycle-fx="fade" data-cycle-loader="wait" data-cycle-timeout="8000"
+         data-cycle-pause-on-hover="true" data-cycle-slides="> div">
+        <div class="slide">
+            <img width="1024" height="640" src="{% static 'images/slides/slide1.jpg' %}"
+                 class="attachment-1024x1024x1 size-1024x1024x1" alt="default"
+                 srcset="{% static 'images/slides/slide1.jpg' %} 300w, {% static 'images/slides/slide1.jpg' %} 768w, {% static 'images/slides/slide1.jpg' %} 1024w, {% static 'images/slides/slide1.jpg' %} 1200w"
+                 sizes="(max-width: 1024px) 100vw, 1024px"/>
         </div>
+        <div class="slide">
+            <img width="1024" height="683" src="{% static 'images/slides/slide2.jpg' %}"
+                 class="attachment-1024x1024x1 size-1024x1024x1" alt="parent-child-optimized"
+                 srcset="{% static 'images/slides/slide2.jpg' %} 300w, {% static 'images/slides/slide2.jpg' %} 768w, {% static 'images/slides/slide2.jpg' %} 1024w, {% static 'images/slides/slide2.jpg' %} 1200w"
+                 sizes="(max-width: 1024px) 100vw, 1024px"/>
+        </div>
+        <div class="slide">
+            <img width="1024" height="629" src="{% static 'images/slides/slide3.jpg' %}"
+                 class="attachment-1024x1024x1 size-1024x1024x1" alt="preschool-optimized"
+                 srcset="{% static 'images/slides/slide3.jpg' %} 300w, {% static 'images/slides/slide3.jpg' %} 768w, {% static 'images/slides/slide3.jpg' %} 1024w, {% static 'images/slides/slide3.jpg' %} 1200w"
+                 sizes="(max-width: 1024px) 100vw, 1024px"/>
+        </div>
+        <div class="slide">
+            <img width="1024" height="640" src="{% static 'images/slides/slide1.jpg' %}"
+                 class="attachment-1024x1024x1 size-1024x1024x1" alt="default"
+                 srcset="{% static 'images/slides/slide1.jpg' %} 300w, {% static 'images/slides/slide1.jpg' %} 768w, {% static 'images/slides/slide1.jpg' %} 1024w, {% static 'images/slides/slide1.jpg' %} 1200w"
+                 sizes="(max-width: 1024px) 100vw, 1024px"/>
+        </div>
+        <div class="slide">
+            <img width="1024" height="683" src="{% static 'images/slides/slide2.jpg' %}"
+                 class="attachment-1024x1024x1 size-1024x1024x1" alt="parent-child-optimized"
+                 srcset="{% static 'images/slides/slide2.jpg' %} 300w, {% static 'images/slides/slide2.jpg' %} 768w, {% static 'images/slides/slide2.jpg' %} 1024w, {% static 'images/slides/slide2.jpg' %} 1200w"
+                 sizes="(max-width: 1024px) 100vw, 1024px"/>
+        </div>
+        <div class="slide">
+            <img width="1024" height="629" src="{% static 'images/slides/slide3.jpg' %}"
+                 class="attachment-1024x1024x1 size-1024x1024x1" alt="preschool-optimized"
+                 srcset="{% static 'images/slides/slide3.jpg' %} 300w, {% static 'images/slides/slide3.jpg' %} 768w, {% static 'images/slides/slide3.jpg' %} 1024w, {% static 'images/slides/slide3.jpg' %} 1200w"
+                 sizes="(max-width: 1024px) 100vw, 1024px"/>
+        </div>
+    </div>
+    <div id="slider-panels">
+        <div class="container">
+            <div class="row">
+                <h2>Verso una nuova educazione</h2>
 
-        <div id="slider-panels">
-            <div class="container">
-                <div class="row">
-
-                    <h2>Education from the Inside Out.</h2>
-
-                    <div class="col-sm-2">
-                        <div id="1" class="slider-panel">
-                            <a href="/scuola-infanzia">
-                                <p>Scuola dell'infanzia
-                                <span>con sezione primavera</span></p>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-sm-2">
-                        <div id="2" class="slider-panel">
-                            <a href="http://scuola.janua.it/preschool/">
-                                <p>Ciclo I-VIII classe
-                                <span>scuola primaria e secondaria</span></p>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-sm-2">
-                        <div id="3" class="slider-panel">
-                            <a href="http://scuola.janua.it/kindergarten/">
-                                <p>Didattica Speciale
-                                <span>percorsi personalizzati</span></p>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-sm-2">
-                        <div id="4" class="slider-panel">
-                            <a href="http://scuola.janua.it/lower-school/">
-                                <p>Scuola di musica
-                                <span>pomeridiana</span></p>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-sm-2">
-                        <div id="5" class="slider-panel">
-                            <a href="http://scuola.janua.it/middle-school/">
-                                <p>Corso di specializzazione
-                                <span>alla pedagogia di Rudolf Steiner</span></p>
-                            </a>
-                        </div>
+                {% for page in page_branch %}
+                {% if page.in_menu %}
+                <div class="col-sm-2">
+                    <div id="1" class="slider-panel">
+                        <a href="{{ page.get_absolute_url }}">
+                            <p>{{ page.title }}</p>
+                        </a>
                     </div>
                 </div>
+                {% endif %}
+                {% if page.has_children_in_menu %}{% page_menu page %}{% endif %}
+                {% endfor %}
             </div>
         </div>
-
     </div>
+</div>
+{% else %}
+{% for page in page_branch %}
+{% if page.in_menu %}
+<div class="col-sm-2">
+    <div id="1" class="slider-panel">
+        <a href="{{ page.get_absolute_url }}">
+            <p>{{ page.title }}</p>
+        </a>
+    </div>
+</div>
+{% endif %}
+{% if page.has_children_in_menu %}{% page_menu page %}{% endif %}
+{% endfor %}
+{% endif %}
+{% endspaceless %}
+
+
+
