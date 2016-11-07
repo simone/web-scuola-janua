@@ -43,7 +43,7 @@ from django.utils.translation import ugettext_lazy as _
 # that doesn't appear in this setting, all pages will appear in it.
 
 PAGE_MENU_TEMPLATES = (
-     (0, _("Top navigation bar"), "pages/menus/topbar.html"),
+     #(0, _("Top navigation bar"), "pages/menus/topbar.html"),
      (1, _("Main Menu"), "pages/menus/dropdown.html"),
      (2, _("Slides"), "pages/menus/slides.html"),
      (3, _("Banner Menu"), "pages/menus/banner.html"),

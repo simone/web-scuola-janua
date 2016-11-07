@@ -2,35 +2,39 @@
 
 {% spaceless %}
 {% if branch_level == 0 %}
-    <section id="top-bar">
+    <section id="top-bar" class="visible-xs">
         <div class="container">
             <div class="row">
-                <div class="col-sm-7">
+                <div class="col-sm-8 hidden-xs">
                     <nav id="sub-nav">
                         <ul id="menu-sub-menu" class="sub-menu">
 
                             {% if page_branch_in_menu %}
                             {% for page in page_branch %}
                             {% if page.in_menu %}
+                            <!--
                             <li class="menu-item menu-item-type-post_type menu-item-object-page">
                                 <a href="{{ page.get_absolute_url }}">{{ page.title }}</a>
                             </li>
+                            -->
                             {% endif %}
                             {% if page.has_children_in_menu %}{% page_menu page %}{% endif %}
                             {% endfor %}
                             {% endif %}
 
+                            <!--
                             <li class="menu-item menu-item-type-post_type menu-item-object-page">
                                 <a href="/blog/">Blog</a>
                             </li>
+                            -->
                         </ul>
                     </nav>
                 </div>
-                <div class="col-sm-5">
-                    <p>
-                        <i class="fa fa-phone"></i><a href="tel:+39065515938">(+39) 06-5515938</a> &emsp;
-                        <i class="fa fa-envelope-o"></i><a href="mailto:scuola@janua.it">scuola@janua.it</a>
-                    </p>
+                <div class="col-xs-6 col-sm-2">
+                    <p style="white-space: nowrap;"><i class="fa fa-phone"></i><a href="tel:+39065515938">(+39) 06-5515938</a></p>
+                </div>
+                <div class="col-xs-6 col-sm-2">
+                    <p style="white-space: nowrap;"><i class="fa fa-envelope-o"></i><a href="mailto:scuola@janua.it">scuola@janua.it</a></p>
                 </div>
             </div>
         </div>
@@ -38,9 +42,11 @@
 {% else %}
 {% for page in page_branch %}
 {% if page.in_menu %}
+<!--
 <li class="menu-item menu-item-type-post_type menu-item-object-page">
     <a href="{{ page.get_absolute_url }}">{{ page.title }}</a>
 </li>
+-->
 {% endif %}
 {% if page.has_children_in_menu %}{% page_menu page %}{% endif %}
 {% endfor %}
