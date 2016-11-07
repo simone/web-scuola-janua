@@ -397,12 +397,9 @@ main a, main a:hover {
 	top: 25%;
 	left: 30%;
 	color: #fff;
-	z-index: 500;
 	font-size: 42px;
 	position: absolute;
 	font-family: 'Baar Goetheanis', cursive;
-	transform: translate(-25%, -30%);
-	-webkit-transform: translate(-25%, -30%);
 }
 
 /* gallery */
