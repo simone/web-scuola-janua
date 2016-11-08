@@ -29,7 +29,10 @@
 
 	/* slider */
 	#slider {
-		height: auto;
+		max-height: 450px;
+	}
+	#slider .slide {
+	    max-height: 450px;
 	}
 
 	/* slider panels */
@@ -207,7 +210,10 @@
 
 	/* slider */
 	#slider {
-		height: auto;
+		max-height: 200px;
+	}
+	#slider .slide {
+	    max-height: 200px;
 	}
 	#slider-panels > .container > .row > h2 {
 		font-size: 20px;

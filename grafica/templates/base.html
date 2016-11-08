@@ -36,6 +36,7 @@
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"
       integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-feed/0.1.2/css/jquery.socialfeed.min.css" integrity="sha256-Y+bGRUcXIpO192NM6k0kUVmowggFDuUuqH4mON7fV2Q=" crossorigin="anonymous" />
 
 
 {% compress css %}
@@ -77,14 +78,7 @@
     <script type="text/javascript"
             src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.10/cookieconsent.min.js"></script>
 
-    <script type='text/javascript' src="{% static 'js/spectragram.js' %}"></script>
-
-    <script>
-        jQuery.fn.spectragram.accessData = {
-            accessToken: '212288712.111b359.fa7122930d7a4779a4e3f888b11c5bdb',
-            clientID: '111b3594f5f543e6b82171ee189b8493'
-        };
-    </script>
+    <script src="https://snapwidget.com/js/snapwidget.js"></script>
 
 {% compress js %}
 <script src="{% static 'js/bootstrap-extras.js' %}"></script>
@@ -132,131 +126,13 @@
     </div>
 </div>
 
-
-{% block testimonials %}
-    <div id="testimonials">
-        <div id="testimonials-overlay">
-
-            <h2>Testimonials</h2>
-
-            <div class="testimonial-slideshow" data-cycle-fx=fade data-cycle-timeout=8000
-                 data-cycle-pause-on-hover="true" data-cycle-slides="> .testimonial">
-
-
-                <div class="testimonial">
-
-                    <p style="text-align: center;">The faculty at the Janua Waldorf School are fantastic.  They are
-                        approachable and available to talk when we need it.  I just love the holistic and balanced
-                        learning my child is receiving.  I can see the leaders of our future developing here!.</p>
-
-                    <p style="text-align: center;">-Gabriele K, Janua Waldorf School Parent</p>
-
-                    <p style="text-align: center;"><a class="button" href="http://scuola.janua.it/visit-us/"
-                                                      style="background-color: #009DDC;">BOOK A TOUR</a></p>
-
-                </div>
-
-                <div class="testimonial">
-
-                    <p style="text-align: center;">My son transferred from public school into Grade 2 at the Janua
-                        Waldorf School.  I am so pleased to see how his self-esteem has grown and how he is finally
-                        coming out of his shell.  I am so relieved we decided to send him to JANUA.</p>
-
-                    <p style="text-align: center;">&#8211; S.K., Janua Waldorf School Parent</p>
-
-                    <p style="text-align: center;"><a class="button" href="http://scuola.janua.it/visit-us/"
-                                                      style="background-color: #009DDC;">BOOK A TOUR</a></p>
-
-                </div>
-
-                <div class="testimonial">
-
-                    <p style="text-align: center;">My 8 year old read an entire children&#8217;s novel all on his own!
-                         I am so amazed at how he just naturally began to read!  And he even understood it!  The Waldorf
-                        approach to learning really is working.   I am seeing it unfold before my eyes!</p>
-
-                    <p style="text-align: center;">&#8211; Michael R., Janua Waldorf School Parent</p>
-
-                    <p style="text-align: center;"><a class="button" href="http://scuola.janua.it/visit-us/"
-                                                      style="background-color: #009DDC;">BOOK A TOUR</a></p>
-
-                </div>
-
-                <div class="testimonial">
-
-                    <p style="text-align: center;">We have had 3 children in the Janua Waldorf School for the past 3
-                        years. We are so pleased with the dedication and commitment of our faculty and staff to create a
-                        warm and loving learning environment. Our children are always excited to get up and go to school
-                        each morning.</p>
-
-                    <p style="text-align: center;">&#8211; Warren Houston, Janua Waldorf School Parent</p>
-
-                    <p style="text-align: center;"><a class="button" href="http://scuola.janua.it/visit-us/"
-                                                      style="background-color: #009DDC;">BOOK A TOUR</a></p>
-
-                </div>
-            </div>
-        </div>
-    </div>
-{% endblock %}
-
 {% block gallery %}
     <div id="gallery">
-
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <h2>Vita a scuola</h2>
-                </div>
-
-                <div id="instagram"></div>
-            </div>
-        </div>
+        <iframe src="https://snapwidget.com/embed/284161" class="snapwidget-widget" allowTransparency="true" frameborder="0" scrolling="yes" style="border:none; overflow:hidden; width:100%; height:270px"></iframe>
     </div>
-
-    <script>
-        $('#instagram').spectragram('getRecentMedia',{
-            query: 'self',
-            max: 12,
-            size: 'big',
-            wrapEachWith: '<div class="gallery col-xs-12 col-sm-6 col-md-4 col-lg-3"></div>'
-        });
-    </script>
 {% endblock %}
 
-<!--
-<div class="container">
-<div class="row">
 
-<div class="col-md-2 left">
-    {% block left_panel %}
-    <div class="panel panel-default tree">{% page_menu "pages/menus/tree.html" %}</div>
-    {% endblock %}
-</div>
-
-<div class="col-md-7 middle">
-
-</div>
-
-<div class="col-md-3 right">
-    {% nevercache %}
-    {% include "includes/language_selector.html" %}
-    {% include "includes/user_panel.html" %}
-    {% endnevercache %}
-    <div class="panel panel-default">
-    <div class="panel-body">
-    {% block right_panel %}
-    {% ifinstalled mezzanine.twitter %}
-    {% include "twitter/tweets.html" %}
-    {% endifinstalled %}
-    {% endblock %}
-    </div>
-    </div>
-</div>
-
-</div>
-</div>
--->
 
 <footer>
 <div class="container">
@@ -300,10 +176,10 @@
 </section>
 </footer>
 
-
 {% block footer_js %}
 {% include "includes/footer_scripts.html" %}
 {% endblock %}
 
+</div>
 </body>
 </html>

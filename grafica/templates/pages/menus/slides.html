@@ -5,41 +5,15 @@
 <div id="slider">
     <div class="cycle-slideshow" data-cycle-fx="fade" data-cycle-loader="wait" data-cycle-timeout="8000"
          data-cycle-pause-on-hover="true" data-cycle-slides="> div">
+
         <div class="slide">
-            <img width="1024" height="640" src="{% static 'images/slides/slide1.jpg' %}"
-                 class="attachment-1024x1024x1 size-1024x1024x1" alt="default"
-                 srcset="{% static 'images/slides/slide1.jpg' %} 300w, {% static 'images/slides/slide1.jpg' %} 768w, {% static 'images/slides/slide1.jpg' %} 1024w, {% static 'images/slides/slide1.jpg' %} 1200w"
-                 sizes="(max-width: 1024px) 100vw, 1024px"/>
+            <img height="300" src="{% static 'images/slides/slide1.jpg' %}" alt="slide1"/>
         </div>
         <div class="slide">
-            <img width="1024" height="683" src="{% static 'images/slides/slide2.jpg' %}"
-                 class="attachment-1024x1024x1 size-1024x1024x1" alt="parent-child-optimized"
-                 srcset="{% static 'images/slides/slide2.jpg' %} 300w, {% static 'images/slides/slide2.jpg' %} 768w, {% static 'images/slides/slide2.jpg' %} 1024w, {% static 'images/slides/slide2.jpg' %} 1200w"
-                 sizes="(max-width: 1024px) 100vw, 1024px"/>
+            <img height="300" src="{% static 'images/slides/slide2.jpg' %}" alt="slide2"/>
         </div>
         <div class="slide">
-            <img width="1024" height="629" src="{% static 'images/slides/slide3.jpg' %}"
-                 class="attachment-1024x1024x1 size-1024x1024x1" alt="preschool-optimized"
-                 srcset="{% static 'images/slides/slide3.jpg' %} 300w, {% static 'images/slides/slide3.jpg' %} 768w, {% static 'images/slides/slide3.jpg' %} 1024w, {% static 'images/slides/slide3.jpg' %} 1200w"
-                 sizes="(max-width: 1024px) 100vw, 1024px"/>
-        </div>
-        <div class="slide">
-            <img width="1024" height="640" src="{% static 'images/slides/slide1.jpg' %}"
-                 class="attachment-1024x1024x1 size-1024x1024x1" alt="default"
-                 srcset="{% static 'images/slides/slide1.jpg' %} 300w, {% static 'images/slides/slide1.jpg' %} 768w, {% static 'images/slides/slide1.jpg' %} 1024w, {% static 'images/slides/slide1.jpg' %} 1200w"
-                 sizes="(max-width: 1024px) 100vw, 1024px"/>
-        </div>
-        <div class="slide">
-            <img width="1024" height="683" src="{% static 'images/slides/slide2.jpg' %}"
-                 class="attachment-1024x1024x1 size-1024x1024x1" alt="parent-child-optimized"
-                 srcset="{% static 'images/slides/slide2.jpg' %} 300w, {% static 'images/slides/slide2.jpg' %} 768w, {% static 'images/slides/slide2.jpg' %} 1024w, {% static 'images/slides/slide2.jpg' %} 1200w"
-                 sizes="(max-width: 1024px) 100vw, 1024px"/>
-        </div>
-        <div class="slide">
-            <img width="1024" height="629" src="{% static 'images/slides/slide3.jpg' %}"
-                 class="attachment-1024x1024x1 size-1024x1024x1" alt="preschool-optimized"
-                 srcset="{% static 'images/slides/slide3.jpg' %} 300w, {% static 'images/slides/slide3.jpg' %} 768w, {% static 'images/slides/slide3.jpg' %} 1024w, {% static 'images/slides/slide3.jpg' %} 1200w"
-                 sizes="(max-width: 1024px) 100vw, 1024px"/>
+            <img height="300" src="{% static 'images/slides/slide3.jpg' %}" alt="slide3"/>
         </div>
     </div>
     <div id="slider-panels">
@@ -50,7 +24,7 @@
                 {% for page in page_branch %}
                 {% if page.in_menu %}
                 <div class="col-sm-2">
-                    <div id="1" class="slider-panel">
+                    <div class="slider-panel">
                         <a href="{{ page.get_absolute_url }}">
                             <p>{{ page.title }}</p>
                         </a>
