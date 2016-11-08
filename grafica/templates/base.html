@@ -74,8 +74,17 @@
             src="https://cdnjs.cloudflare.com/ajax/libs/jquery.cycle2/2.1.6/jquery.cycle2.min.js"></script>
     <script type="text/javascript"
             src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js"></script>
+    <script type="text/javascript"
+            src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.10/cookieconsent.min.js"></script>
 
-    <script async defer src="//platform.instagram.com/en_US/embeds.js"></script>
+    <script type='text/javascript' src="{% static 'js/spectragram.js' %}"></script>
+
+    <script>
+        jQuery.fn.spectragram.accessData = {
+            accessToken: '212288712.111b359.fa7122930d7a4779a4e3f888b11c5bdb',
+            clientID: '111b3594f5f543e6b82171ee189b8493'
+        };
+    </script>
 
 {% compress js %}
 <script src="{% static 'js/bootstrap-extras.js' %}"></script>
@@ -200,192 +209,19 @@
                     <h2>Vita a scuola</h2>
                 </div>
 
-                <div class="gallery col-xs-6 col-sm-3">
-
-                    <div data-cycle-fx="fade" data-cycle-loader="wait" data-cycle-timeout="7968"
-                         data-cycle-slides="> .gallery-item">
-
-                        <div class="gallery-item">
-                            <a class="gallery-group"
-                               href="http://scuola.janua.it/wp-content/uploads/2016/02/chalkboard-drawing2-copy.jpg"><img
-                                    src="http://scuola.janua.it/wp-content/uploads/2016/02/chalkboard-drawing2-copy-232x232.jpg"
-                                    alt="Chalkboard Drawing"/></a>
-                        </div>
-
-
-                        <div class="gallery-item">
-                            <a class="gallery-group"
-                               href="http://scuola.janua.it/wp-content/uploads/2016/02/micheal-maas-3.jpeg"><img
-                                    src="http://scuola.janua.it/wp-content/uploads/2016/02/micheal-maas-3-232x232.jpeg"
-                                    alt="Pumpkin" /></a>
-                        </div>
-
-
-                    </div>
-                </div>
-
-                <div class="gallery col-xs-6 col-sm-3">
-
-                    <div data-cycle-fx="fade" data-cycle-loader="wait" data-cycle-timeout="8484"
-                         data-cycle-slides="> .gallery-item">
-
-                        <div class="gallery-item">
-                            <a class="gallery-group"
-                               href="http://scuola.janua.it/wp-content/uploads/2016/02/IMG_2797.jpg"><img
-                                    src="http://scuola.janua.it/wp-content/uploads/2016/02/IMG_2797-232x232.jpg"
-                                    alt="Wood Working" /></a>
-                        </div>
-
-
-                        <div class="gallery-item">
-                            <a class="gallery-group"
-                               href="http://scuola.janua.it/wp-content/uploads/2016/01/Waldorf-3.jpg"><img
-                                    src="http://scuola.janua.it/wp-content/uploads/2016/01/Waldorf-3-232x232.jpg"
-                                    alt="Kids Cutting Vegetables" /></a>
-                        </div>
-
-
-                    </div>
-
-                </div>
-
-
-                <div class="gallery col-xs-6 col-sm-3">
-
-                    <div class="3" data-cycle-fx="fade" data-cycle-loader="wait" data-cycle-timeout="8375"
-                         data-cycle-slides="> .gallery-item">
-
-
-                        <div class="gallery-item">
-                            <a class="gallery-group"
-                               href="http://scuola.janua.it/wp-content/uploads/2016/01/Waldorf-2.jpg"><img
-                                    src="http://scuola.janua.it/wp-content/uploads/2016/01/Waldorf-2-232x232.jpg"
-                                    alt="Janua Kindergarten Program" /></a>
-                        </div>
-
-
-                        <div class="gallery-item">
-                            <a class="gallery-group"
-                               href="http://scuola.janua.it/wp-content/uploads/2016/01/dragon7.jpg"><img
-                                    src="http://scuola.janua.it/wp-content/uploads/2016/01/dragon7-232x232.jpg"
-                                    alt="Michaelmas Play" /></a>
-                        </div>
-
-
-                    </div>
-
-                </div>
-
-
-                <div class="gallery col-xs-6 col-sm-3">
-
-                    <div class="4" data-cycle-fx="fade" data-cycle-loader="wait" data-cycle-timeout="7295"
-                         data-cycle-slides="> .gallery-item">
-
-                        <div class="gallery-item">
-                            <a class="gallery-group"
-                               href="http://scuola.janua.it/wp-content/uploads/2016/02/garden-photo.jpg"><img
-                                    src="http://scuola.janua.it/wp-content/uploads/2016/02/garden-photo-232x232.jpg"
-                                    alt="Flowers"/></a>
-                        </div>
-
-
-                        <div class="gallery-item">
-                            <a class="gallery-group"
-                               href="http://scuola.janua.it/wp-content/uploads/2016/01/girls-on-playground.jpg"><img
-                                    src="http://scuola.janua.it/wp-content/uploads/2016/01/girls-on-playground-232x232.jpg"
-                                    alt="Kids Playground" /></a>
-                        </div>
-
-
-                    </div>
-
-                </div>
-
-
-                <div class="gallery col-xs-6 col-sm-3">
-
-                    <div class="5" data-cycle-fx="fade" data-cycle-loader="wait" data-cycle-timeout="6353"
-                         data-cycle-slides="> .gallery-item">
-
-
-                        <div class="gallery-item">
-                            <a class="gallery-group"
-                               href="http://scuola.janua.it/wp-content/uploads/2016/01/lower-school-v2-final.jpg"><img
-                                    src="http://scuola.janua.it/wp-content/uploads/2016/01/lower-school-v2-final-232x232.jpg"
-                                    alt="Janua Lower School" /></a>
-                        </div>
-
-
-                        <div class="gallery-item">
-                            <a class="gallery-group"
-                               href="http://scuola.janua.it/wp-content/uploads/2016/02/DSC_4604.jpg"><img
-                                    src="http://scuola.janua.it/wp-content/uploads/2016/02/DSC_4604-232x232.jpg"
-                                    alt="Young Girl Face" /></a>
-                        </div>
-
-
-                    </div>
-
-                </div>
-
-
-                <div class="gallery col-xs-6 col-sm-3">
-
-                    <div class="6" data-cycle-fx="fade" data-cycle-loader="wait" data-cycle-timeout="6442"
-                         data-cycle-slides="> .gallery-item">
-
-
-                        <div class="gallery-item">
-                            <a class="gallery-group"
-                               href="http://scuola.janua.it/wp-content/uploads/2016/01/Waldorf-4.jpg"><img
-                                    src="http://scuola.janua.it/wp-content/uploads/2016/01/Waldorf-4-232x232.jpg"
-                                    alt="Janua Playground" /></a>
-                        </div>
-
-
-                    </div>
-
-                </div>
-
-
-                <div class="gallery col-xs-6 col-sm-3">
-
-                    <div class="7" data-cycle-fx="fade" data-cycle-loader="wait" data-cycle-timeout="9594"
-                         data-cycle-slides="> .gallery-item">
-
-
-                        <div class="gallery-item">
-                            <a class="gallery-group"
-                               href="http://scuola.janua.it/wp-content/uploads/2016/01/Waldorf-5.jpg"><img
-                                    src="http://scuola.janua.it/wp-content/uploads/2016/01/Waldorf-5-232x232.jpg"
-                                    alt="The World is Good" /></a>
-                        </div>
-
-
-                    </div>
-
-                </div>
-
-
-                <div class="gallery col-xs-6 col-sm-3">
-
-                    <div class="8" data-cycle-fx="fade" data-cycle-loader="wait" data-cycle-timeout="9465"
-                         data-cycle-slides="> .gallery-item">
-
-                        <div class="gallery-item">
-                            <a class="gallery-group"
-                               href="http://scuola.janua.it/wp-content/uploads/2016/01/contact-banner.jpg"><img
-                                    src="http://scuola.janua.it/wp-content/uploads/2016/01/contact-banner-232x232.jpg"
-                                    alt="contact-banner" /></a>
-                        </div>
-
-                    </div>
-
-                </div>
+                <div id="instagram"></div>
             </div>
         </div>
     </div>
+
+    <script>
+        $('#instagram').spectragram('getRecentMedia',{
+            query: 'self',
+            max: 12,
+            size: 'big',
+            wrapEachWith: '<div class="gallery col-xs-12 col-sm-6 col-md-4 col-lg-3"></div>'
+        });
+    </script>
 {% endblock %}
 
 <!--
