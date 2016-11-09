@@ -13,6 +13,16 @@ class MyPageAdmin(PageAdmin):
     fieldsets = page_fieldsets
 
 admin.site.unregister(Page)
-admin.site.unregister(RichTextPage)
 admin.site.register(Page, MyPageAdmin)
-admin.site.register(RichTextPage, MyPageAdmin)
+
+
+richtextpage_fieldsets = deepcopy(page_fieldsets)
+richtextpage_fieldsets[0][1]["fields"].insert(4, "content")
+
+
+class MyRichTextPageAdmin(PageAdmin):
+    fieldsets = richtextpage_fieldsets
+
+
+admin.site.unregister(RichTextPage)
+admin.site.register(RichTextPage, MyRichTextPageAdmin)
