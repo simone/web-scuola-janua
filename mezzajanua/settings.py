@@ -80,6 +80,14 @@ PAGE_MENU_TEMPLATES = (
 #     ),
 # )
 
+EXTRA_MODEL_FIELDS = (
+    ("mezzanine.pages.models.Page.subtitle", "CharField", (_("Subtitle"),), {"blank": True, "max_length": 400}),
+)
+
+MIGRATION_MODULES = {
+    "pages": "grafica.migrations.pages_migration",
+}
+
 # Setting to turn on featured images for blog posts. Defaults to False.
 #
 # BLOG_USE_FEATURED_IMAGE = True

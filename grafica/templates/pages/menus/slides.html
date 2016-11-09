@@ -20,7 +20,6 @@
         <div class="container">
             <div class="row">
                 <h2>Verso una nuova educazione</h2>
-
                 {% for page in page_branch %}
                 {% if page.in_menu %}
                 <div class="col-sm-2">
@@ -43,7 +42,8 @@
 <div class="col-sm-2">
     <div id="1" class="slider-panel">
         <a href="{{ page.get_absolute_url }}">
-            <p>{{ page.title }}</p>
+            <p>{{ page.title }} <br/> <small>{{ page.subtitle }}</small></p>
+
         </a>
     </div>
 </div>

@@ -392,12 +392,15 @@ main a, main a:hover {
 	flex: 1;
 	background: rgba(0, 0, 0, .25);
 }
-#banner > #banner-overlay > h1 {
-	top: 25%;
-	left: 30%;
+#banner > #banner-overlay > .container > h1 {
+    margin-top: 1.2em;
 	color: #fff;
 	font-size: 42px;
-	position: absolute;
+	font-family: 'Baar Goetheanis', cursive;
+}
+#banner > #banner-overlay > .container > h2 {
+	color: #fff;
+	font-size: 22px;
 	font-family: 'Baar Goetheanis', cursive;
 }
 

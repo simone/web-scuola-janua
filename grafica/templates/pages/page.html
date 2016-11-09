@@ -23,7 +23,10 @@
 
 <section id="banner" style="background-image: url('http://www.kelownawaldorf.org/wp-content/uploads/2016/01/parent-child-optimized-1024x683.jpg');">
 	<div id="banner-overlay">
-		<h1>{% editable page.title %}{{ page.title }}{% endeditable %}</h1>
+        <div class="container">
+            <h1>{% editable page.title page.subtitle %}{{ page.title }}{% endeditable %}</h1>
+            <h2>{{ page.subtitle }}</h2>
+        </div>
 	</div>
 </section>
 

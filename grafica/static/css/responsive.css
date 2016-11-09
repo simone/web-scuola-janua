@@ -50,7 +50,9 @@
 	#banner > #banner-overlay > h1 {
 		font-size: 32px;
 	}
-
+    #banner > #banner-overlay > h2 {
+		font-size: 18px;
+	}
 	/* programs nav */
 	#programs-nav {
 		height: auto;
@@ -163,6 +165,9 @@
 	}
 	#banner > #banner-overlay > h1 {
 		font-size: 30px;
+	}
+	#banner > #banner-overlay > h2 {
+		font-size: 16px;
 	}
 
 	/* testimonials */
