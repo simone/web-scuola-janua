@@ -710,3 +710,11 @@ footer > .container > .row > div[class*='col'] > .widget > div > p {
 .cc_message {
     color: white;
 }
+
+.editable-form {
+    -ms-transform: translate(0, 0) !important;
+    -webkit-transform: translate(0, 0) !important;
+    transform: none !important;
+    top: 5% !important;
+    left: auto !important;
+}

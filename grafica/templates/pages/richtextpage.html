@@ -6,15 +6,23 @@
     {% if on_home %}
         {% page_menu "pages/menus/slides.html" %}
     {% else %}
-        {{ block.super }}
+        <section id="banner" style="background-image: url('http://www.kelownawaldorf.org/wp-content/uploads/2016/01/parent-child-optimized-1024x683.jpg');">
+            <div id="banner-overlay">
+                <div class="container">
+                    {% with page.richtextpage as richtextpage %}
+                    <h1>{% editable richtextpage.title richtextpage.subtitle %}{{ richtextpage.title }}{% endeditable %}</h1>
+                    <h2>{{ richtextpage.subtitle }}</h2>
+                    {% endwith %}
+                </div>
+            </div>
+        </section>
         {% page_menu "pages/menus/banner.html" %}
     {% endif %}
 {% endblock %}
 
-{% block main %}{{ block.super }}
-
-{% editable page.richtextpage.content %}
-{{ page.richtextpage.content|richtext_filters|safe }}
-{% endeditable %}
-
+{% block main %}
+    {{ block.super }}
+    {% editable page.richtextpage.content %}
+        {{ page.richtextpage.content|richtext_filters|safe }}
+    {% endeditable %}
 {% endblock %}
