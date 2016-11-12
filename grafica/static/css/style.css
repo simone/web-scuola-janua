@@ -315,7 +315,9 @@ main a, main a:hover {
 	padding-bottom: 40px;
 }
 
-#home-content main {}
+#home-content main {
+    font-size: 20px;
+}
 #home-content aside {}
 
 #home-content main iframe {
