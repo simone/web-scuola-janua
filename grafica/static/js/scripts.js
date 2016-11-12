@@ -1,4 +1,8 @@
 // Custom Template JavaScript Document
+jQuery.fn.spectragram.accessData = {
+    accessToken: '3620259858.14d76a8.c31faf69cf8f47498f3e31171abdaa23',
+    clientID: '14d76a8c537d4a19bf5216a715f31943'
+};
 
 jQuery(document).ready(function() {
 	jQuery('#menu-main-menu').responseamenu({
@@ -28,6 +32,19 @@ jQuery(document).ready(function() {
 	
 	jQuery('.gallery-group').colorbox({rel:'gallery-group', fixed:'false', maxWidth:'100%', height:'auto', maxHeight:'100%'});
 
+    jQuery('#instagram-scroll').spectragram('getRecentMedia',{
+            query: 'self',
+            max: 50,
+            size: 'small',
+            wrapEachWith: '<p></p>',
+            complete: function() {
+                jQuery("#instagram-scroll").smoothDivScroll({
+                    autoScrollingMode: "onStart",
+                    touchScrolling: true,
+                    hotSpotScrolling: false
+                });
+            }
+    });
 });
 
 

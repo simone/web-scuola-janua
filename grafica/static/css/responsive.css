@@ -1,5 +1,19 @@
 /* Responsive CSS */
 
+
+/* tablets - portrait */
+@media(max-width: 1199px) {
+    #main-nav {
+        padding-top: 17px;
+    }
+    #main-nav > ul > li > a {
+        font-size: 16px;
+    }
+    #main-nav > ul > li > ul {
+    	padding: 13px 0 0;
+    }
+}
+
 /* tablets - portrait */
 @media(max-width: 1024px) {
 
@@ -29,22 +43,29 @@
 
 	/* slider */
 	#slider {
-		max-height: 450px;
+		max-height: 300px;
 	}
 	#slider .slide {
-	    max-height: 450px;
+	    max-height: 300px;
 	}
 
 	/* slider panels */
 	#slider-panels {}
 
-	#slider-panels > .container > .row > div[class*="col"] {
-		display: none;
-		visibility: hidden;
-	}
+
 	#slider-panels > .container > .row > h2 {
 		right: 5%;
 	}
+
+    #main-nav {
+        padding-top: 17px;
+    }
+    #main-nav > ul > li > a {
+        font-size: 16px;
+    }
+    #main-nav > ul > li > ul {
+    	padding: 12px 0 0;
+    }
 
 	/* banner */
 	#banner > #banner-overlay > h1 {
@@ -73,6 +94,20 @@
 		border: thin solid #fff;
 	}
 
+}
+
+
+/* smartphones - landscape */
+@media(max-width: 991px) {
+    #main-nav {
+        padding-top: 13px;
+    }
+    #main-nav > ul > li > a {
+        font-size: 14px;
+    }
+    #main-nav > ul > li > ul {
+    	padding: 8px 0 0;
+    }
 }
 
 /* smartphones - landscape */
@@ -136,8 +171,8 @@
 
 	/* main nav */
 	#main-nav {
-		padding-top: 10px;
-		padding-bottom: 10px;
+		padding-top: 0px;
+		padding-bottom: 0px;
 	}
 
 	/* sub nav */
@@ -156,6 +191,12 @@
 		transform: translate(0);
 		-webkit-transform: translate(0);
 	}
+
+	#slider-panels > .container > .row > div[class*="col"] {
+		display: none;
+		visibility: hidden;
+	}
+
 	#slider-panels > .container > .row > h2 {
 		font-size: 26px;
 		position: static;
@@ -202,6 +243,8 @@
 	footer > .container > .row > div[class*="col"] p {
 		#text-align: left;
 	}
+
+
 
 }
 
