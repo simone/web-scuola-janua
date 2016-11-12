@@ -153,7 +153,7 @@ main a, main a:hover {
 #main-nav > ul > li > ul {
 	display: none;
 }
-#main-nav > ul > li > ul {
+#main-nav > ul > li:hover > ul {
 	z-index: 1000;
 	display: block;
 	text-align: left;
