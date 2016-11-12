@@ -11,7 +11,7 @@
                 <div class="container">
                     {% with page.richtextpage as richtextpage %}
                     <h1>{% editable richtextpage.title richtextpage.subtitle %}{{ richtextpage.title }}{% endeditable %}</h1>
-                    <h2>{{ richtextpage.subtitle }}</h2>
+                    <h2 class="hidden-xs">{{ richtextpage.subtitle }}</h2>
                     {% endwith %}
                 </div>
             </div>
