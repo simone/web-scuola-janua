@@ -317,6 +317,7 @@ OPTIONAL_APPS = (
     PACKAGE_NAME_GRAPPELLI,
 )
 
+RICHTEXT_FILTER_LEVEL = 2
 EMAIL_BACKEND = 'post_office.EmailBackend'
 
 ##################
