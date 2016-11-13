@@ -179,6 +179,9 @@
     #programs-nav > .container > .row > div[class*="col"] > ul > li:first-child:nth-last-child(1){
         width: 100%;
     }
+    #programs-nav > .container > .row > div[class*='col'] > ul > li > a {
+        white-space: nowrap;
+    }
 
 	/* sub nav */
 	#sub-nav ul > li > a {
