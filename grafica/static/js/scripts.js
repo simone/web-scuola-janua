@@ -20,7 +20,7 @@ jQuery(document).ready(function() {
         jQuery("#programs-nav").hide();
 
     } else if (jQuery('#programs-nav > .container > .row > div[class*="col"] > ul > li').length % 2 == 1){
-        jQuery('#programs-nav > .container > .row > div[class*="col"] > ul > li.current-page').addClass("hidden-xs");
+        // jQuery('#programs-nav > .container > .row > div[class*="col"] > ul > li.current-page').addClass("hidden-xs");
     }
 
 	jQuery( ".accordion" ).accordion({
