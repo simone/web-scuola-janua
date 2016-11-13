@@ -278,7 +278,9 @@
 	#home-content main iframe {
 		height: 250px;
 	}
-
+    #programs-nav > .container > .row > div[class*="col"] > ul > li {
+        width: 100%;
+    }
 	/* gallery */
 	#gallery {
 		display: none;
