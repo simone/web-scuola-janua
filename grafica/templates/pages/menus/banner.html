@@ -1,23 +1,16 @@
 {% load i18n pages_tags %}
 {% spaceless %}
-{% if page.is_current_or_ascendant %}
+
 {% if branch_level == 0 %}<nav id="programs-nav"><div class="container"><div class="row"><div class="col-sm-12"><ul id="menu-programs-menu" class="programs-menu">{% endif %}
 
+
 {% for page in page_branch %}
-    {% if page.in_menu %}
+    {% if page.is_current_sibling and page.in_menu %}
     <li class="menu-item menu-item-type-post_type menu-item-object-page {% if page.is_current %}current-page{% endif %}">
         <a href="{{ page.get_absolute_url }}#programs-nav">{{ page.title }}</a>
     </li>
     {% endif %}
     {% if page.has_children_in_menu %}{% page_menu page %}{% endif %}
 {% endfor %}
-
-{% if branch_level == 0 %}</ul></div></div></div></nav>
-<script>
-$(function() {
-
-});
-</script>
-{% endif %}
-{% endif %}
+{% if branch_level == 0 %}</ul></div></div></div></nav>{% endif %}
 {% endspaceless %}
