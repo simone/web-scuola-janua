@@ -1,0 +1,21 @@
+{% load i18n pages_tags %}
+{% spaceless %}
+
+{% if page.children.count %}
+<nav id="children-nav">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <ul id="menu-children-menu" class="children-menu">
+                {% for child in page.children.all %}
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page">
+                        <a href="{{ child.get_absolute_url }}#children-nav">{{ child.title }}</a>
+                    </li>
+                {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+{% endif %}
+{% endspaceless %}

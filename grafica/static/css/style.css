@@ -226,6 +226,37 @@ main a, main a:hover {
 }
 #programs-nav > .container > .row > div[class*='col'] > ul > li > a:hover {}
 
+
+/* children nav */
+
+#children-nav {
+	height: 45px;
+	background: #9fcf67;
+}
+#children-nav > .container > .row {}
+#children-nav > .container > .row > div[class*='col'] {}
+#children-nav > .container > .row > div[class*='col'] > ul {
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+#children-nav > .container > .row > div[class*='col'] > ul > li {
+	line-height: 45px;
+	text-align: center;
+	display: inline-block;
+	border-left: thin solid #fff;
+}
+#children-nav > .container > .row > div[class*='col'] > ul > li:first-child {
+	border: none;
+}
+#children-nav > .container > .row > div[class*='col'] > ul > li > a {
+	color: #fff;
+	padding: 0 15px;
+	display: block;
+	font-size: 16px;
+}
+#children-nav > .container > .row > div[class*='col'] > ul > li > a:hover {}
+
 /* slider */
 
 #slider {
