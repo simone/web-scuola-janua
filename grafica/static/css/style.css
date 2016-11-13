@@ -761,11 +761,27 @@ footer > .container > .row > div[class*='col'] > .widget > div > p {
     left: auto !important;
 }
 
+.social-icons {
+    padding-bottom: 40px;
+}
+
 .back-to-top {
     cursor: pointer;
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    bottom: 28px;
+    right: 12px;
     display:none;
     z-index: 10000;
+    color: #cdcdcd;
+    -webkit-transition: all 1s ease 1s;
+    -moz-transition: all 1s ease 1s;
+    -o-transition: all 1s ease 1s;
+    transition: all 1s ease 1s;
+    filter: alpha(opacity=0);
+    cursor: pointer;
+    -o-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    border: 2px solid #e8e8e8;
 }
