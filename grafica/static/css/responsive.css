@@ -170,6 +170,7 @@
 		line-height: 2.5em;
 		border-radius: 10px;
 		border: thin solid #fff;
+		overflow: hidden;
 	}
 	#programs-nav > .container > .row > div[class*="col"] > ul > li:first-child {
 		border-radius: 10px;
