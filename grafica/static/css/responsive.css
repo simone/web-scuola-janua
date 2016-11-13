@@ -165,7 +165,7 @@
 		padding-top: 10px;
 	}
 	#programs-nav > .container > .row > div[class*="col"] > ul > li {
-		margin: 0 0 .75em;
+		margin: 0;
 		width: 50%;
 		line-height: 2.5em;
 		border-radius: 10px;
