@@ -13,7 +13,11 @@ jQuery(document).ready(function() {
 		dropDownId : 'responseamenu',
 		type : 'slide'
 	});
-	
+
+    if (jQuery('#programs-nav > .container > .row > div[class*="col"] > ul').is(":empty")){
+        jQuery("#programs-nav").hide();
+    }
+
 	jQuery( ".accordion" ).accordion({
 		heightStyle: "content"
 	});
@@ -60,6 +64,7 @@ jQuery(document).ready(function() {
         return false;
     });
     jQuery('#back-to-top').tooltip('show');
+
 });
 
 
