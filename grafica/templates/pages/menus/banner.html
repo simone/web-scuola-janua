@@ -3,7 +3,7 @@
 
 {% if branch_level == 0 %}<nav id="programs-nav"><div class="container"><div class="row"><div class="col-sm-12"><ul id="menu-programs-menu" class="programs-menu">{% endif %}
 {% for page in page_branch %}
-    {% if page.is_current_sibling and page.in_menu %}
+    {% if page.is_current_sibling or page.is_current_or_ascendant and page.in_menu %}
     <li class="menu-item menu-item-type-post_type menu-item-object-page {% if page.is_current %}current-page{% endif %}">
         <a href="{{ page.get_absolute_url }}#programs-nav">{{ page.title }}</a>
     </li>
