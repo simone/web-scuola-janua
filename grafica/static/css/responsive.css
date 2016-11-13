@@ -163,11 +163,10 @@
 	}
 	#programs-nav > .container > .row {
 		padding-top: 10px;
-		padding-bottom: 10px;
 	}
 	#programs-nav > .container > .row > div[class*="col"] > ul > li {
-		display: block;
 		margin: 0 0 .75em;
+		width: 50%;
 		line-height: 2.5em;
 		border-radius: 10px;
 		border: thin solid #fff;
@@ -176,6 +175,10 @@
 		border-radius: 10px;
 		border: thin solid #fff;
 	}
+
+    #programs-nav > .container > .row > div[class*="col"] > ul > li:first-child:nth-last-child(1){
+        width: 100%;
+    }
 
 	/* sub nav */
 	#sub-nav ul > li > a {

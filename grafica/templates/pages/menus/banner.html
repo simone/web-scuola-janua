@@ -5,7 +5,7 @@
 
 {% for page in page_branch %}
     {% if page.in_menu %}
-    <li class="menu-item menu-item-type-post_type menu-item-object-page">
+    <li class="menu-item menu-item-type-post_type menu-item-object-page {% if page.is_current %}current-page{% endif %}">
         <a href="{{ page.get_absolute_url }}#programs-nav">{{ page.title }}</a>
     </li>
     {% endif %}

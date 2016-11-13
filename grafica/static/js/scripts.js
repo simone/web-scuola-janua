@@ -14,8 +14,13 @@ jQuery(document).ready(function() {
 		type : 'slide'
 	});
 
+
+
     if (jQuery('#programs-nav > .container > .row > div[class*="col"] > ul').is(":empty")){
         jQuery("#programs-nav").hide();
+
+    } else if (jQuery('#programs-nav > .container > .row > div[class*="col"] > ul').length % 2 == 1){
+        jQuery('#programs-nav > .container > .row > div[class*="col"] > ul > li.current-page').addClass("hidden-xs");
     }
 
 	jQuery( ".accordion" ).accordion({
