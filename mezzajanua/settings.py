@@ -47,7 +47,7 @@ PAGE_MENU_TEMPLATES = (
      (1, _("Main Menu"), "pages/menus/dropdown.html"),
      (2, _("Slides"), "pages/menus/slides.html"),
      (3, _("Banner Menu"), "pages/menus/banner.html"),
-     (4, _("Footer"), "pages/menus/footer.html"),
+     #(4, _("Footer"), "pages/menus/footer.html"),
      (5, _("Static"), "pages/menus/static.html"),
 )
 
