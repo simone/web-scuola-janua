@@ -835,9 +835,6 @@ footer > .container > .row > div[class*='col'] > .widget > div > p {
 
 /* Small Devices, Tablets */
 @media only screen and (min-width : 768px) {
-    .panel-body > .powrLoaded {
-       margin-bottom: -100px;
-    }
 }
 
 /* Medium Devices, Desktops */
@@ -865,9 +862,6 @@ footer > .container > .row > div[class*='col'] > .widget > div > p {
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px) {
-    .panel-body > .powrLoaded {
-        margin-bottom: -150px;
-    }
 }
 
 /* Extra Small Devices, Phones */
