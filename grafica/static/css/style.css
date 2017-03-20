@@ -21,7 +21,7 @@ main li {
 	margin: 0 0 .75em;
 }
 main a, main a:hover {
-	color: #9FCF67;
+	color: #337ab7;
 	font-weight: 500;
 	text-decoration: underline;
 }
@@ -264,8 +264,8 @@ main a, main a:hover {
 	max-height: 350px;
 	overflow: hidden;
 	position: relative;
-	/* height: 750px; */
-	
+	height: 600px;
+    font-family: 'Baar Sophia', sans-serif;
 }
 #slider .slide {
 	width: 100%;
