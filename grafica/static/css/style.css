@@ -817,6 +817,12 @@ footer > .container > .row > div[class*='col'] > .widget > div > p {
     border: 2px solid #e8e8e8;
 }
 
+#flags-picker {
+    padding-top: 20px;
+    right: 0px;
+    max-height: 1em;
+}
+
 /*==================================================
 =            Bootstrap 3 Media Queries             =
 ==================================================*/
@@ -852,16 +858,23 @@ footer > .container > .row > div[class*='col'] > .widget > div > p {
 
 /* Large Devices, Wide Screens */
 @media only screen and (max-width : 1200px) {
-
+   #flags-picker {
+        padding-top: 15px;
+   }
 }
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px) {
-
+   #flags-picker {
+        padding-top: 10px;
+   }
 }
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px) {
+   #flags-picker {
+        padding-top: 0px;
+   }
 }
 
 /* Extra Small Devices, Phones */

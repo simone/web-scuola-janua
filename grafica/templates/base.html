@@ -37,7 +37,8 @@
       integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-feed/0.1.2/css/jquery.socialfeed.min.css" integrity="sha256-Y+bGRUcXIpO192NM6k0kUVmowggFDuUuqH4mON7fV2Q=" crossorigin="anonymous" />
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/2.8.0/css/flag-icon.min.css">
 
 {% compress css %}
 <link rel='stylesheet' href="{% static 'css/fonts.css' %}" type='text/css' media='all'/>
@@ -71,6 +72,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/kineticjs/5.2.0/kinetic.min.js" integrity="sha256-AWw1Yzd6A/1rryjnxrSdZLSsORf81GW8yMCH+9XyB2I=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/2.0.0/jquery.smooth-scroll.min.js" integrity="sha256-SlsOIrSxJkdgVkC3MPI7+rOKO7E7vz4WM26ITgc6ED8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js"></script>
 
 {% compress js %}
 <script src="{% static 'js/bootstrap-extras.js' %}"></script>
@@ -102,8 +104,11 @@
                 <div class="col-sm-4">
                     <a id="logo" href="/"><img src="{% static 'images/layout/LiberaScuolaJanua.png' %}" alt=""/></a>
                 </div>
-                <div class="col-sm-8">
+                <div class="col-sm-7">
                     {% page_menu "pages/menus/dropdown.html" %}
+                </div>
+                <div class="col-sm-1">
+                    {% include "includes/language_selector.html" %}
                 </div>
             </div>
         </div>

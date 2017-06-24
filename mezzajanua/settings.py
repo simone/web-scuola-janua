@@ -85,6 +85,10 @@ EXTRA_MODEL_FIELDS = (
 )
 
 MIGRATION_MODULES = {
+    "blog": "grafica.migrations.blog_migration",
+    "conf": "grafica.migrations.conf_migration",
+    "forms": "grafica.migrations.forms_migration",
+    "galleries": "grafica.migrations.galleries_migration",
     "pages": "grafica.migrations.pages_migration",
 }
 
@@ -94,7 +98,7 @@ MIGRATION_MODULES = {
 
 # If True, the django-modeltranslation will be added to the
 # INSTALLED_APPS setting.
-USE_MODELTRANSLATION = False
+USE_MODELTRANSLATION = True
 
 
 ########################
@@ -121,11 +125,16 @@ USE_TZ = True
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = "it-IT"
+LANGUAGE_CODE = "it"
+MODELTRANSLATION_DEFAULT_LANGUAGE = 'it'
 
 # Supported languages
 LANGUAGES = (
     ('it', _('Italian')),
+    ('en', _('English')),
+    ('es', _('Spanish')),
+    ('fr', _('French')),
+    ('de', _('German')),
 )
 
 # A boolean that turns on/off debug mode. When set to ``True``, stack traces
@@ -140,7 +149,7 @@ SITE_ID = 1
 
 # If you set this to False, Django will make some optimizations so as not
 # to load the internationalization machinery.
-USE_I18N = False
+USE_I18N = True
 
 AUTHENTICATION_BACKENDS = ("mezzanine.core.auth_backends.MezzanineBackend",)
 
