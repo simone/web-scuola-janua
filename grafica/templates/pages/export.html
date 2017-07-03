@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load mezzanine_tags i18n pages_tags %}
+
+{% block main %}
+    {% for page in pages %}
+        {% with page.richtextpage as richtextpage %}
+        <section id="banner">
+            <div id="banner-overlay">
+                <div class="container">
+                    <h1>{{ richtextpage.title }}</h1>
+                    <h2 class="hidden-xs">{{ richtextpage.subtitle }}</h2>
+                </div>
+            </div>
+        </section>
+        {{ richtextpage.content|richtext_filters|safe }}
+        {% endwith %}
+    {% endfor %}
+{% endblock %}

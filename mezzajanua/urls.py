@@ -8,7 +8,7 @@ from django.views.i18n import set_language
 import mezzanine
 from mezzanine.core.views import direct_to_template
 from mezzanine.conf import settings
-
+import grafica
 
 admin.autodiscover()
 
@@ -20,6 +20,7 @@ urlpatterns = i18n_patterns(
     # Change the admin prefix here to use an alternate URL for the
     # admin interface, which would be marginally more secure.
     url("^admin/", include(admin.site.urls)),
+    url("^export.html", grafica.views.export, name='export'),
     #url("^%s/" % settings.EVENT_SLUG, include("mezzanine_agenda.urls"))
 )
 
