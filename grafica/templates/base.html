@@ -108,11 +108,12 @@
                     {% page_menu "pages/menus/dropdown.html" %}
                 </div>
                 <div class="col-sm-1">
-                    {% include "includes/language_selector.html" %}
+                    {% if on_home %}
+                        {% include "includes/language_selector.html" %}
+                    {% endif %}
                 </div>
             </div>
         </div>
-
     </header>
 
 {% block banner %}{% endblock %}
