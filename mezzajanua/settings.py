@@ -80,18 +80,6 @@ PAGE_MENU_TEMPLATES = (
 #     ),
 # )
 
-EXTRA_MODEL_FIELDS = (
-    ("mezzanine.pages.models.Page.subtitle", "CharField", (_("Subtitle"),), {"blank": True, "max_length": 400}),
-)
-
-MIGRATION_MODULES = {
-    "blog": "grafica.migrations.blog_migration",
-    "conf": "grafica.migrations.conf_migration",
-    "forms": "grafica.migrations.forms_migration",
-    "galleries": "grafica.migrations.galleries_migration",
-    "pages": "grafica.migrations.pages_migration",
-}
-
 # Setting to turn on featured images for blog posts. Defaults to False.
 #
 # BLOG_USE_FEATURED_IMAGE = True
@@ -355,6 +343,21 @@ if os.path.exists(f):
 SITE_NAME = SITE_TITLE = "Scuola Janua"
 SITE_URL = "http://scuola.janua.it"
 
+
+#UPLOAD_DIRECTORY = os.path.join(MEDIA_ROOT, 'uploads')
+
+EXTRA_MODEL_FIELDS = (
+    ("mezzanine.pages.models.Page.subtitle", "CharField", (_("Subtitle"),), {"blank": True, "max_length": 400}),
+ #   ("mezzanine.pages.models.Page.banner", "ImageField", (_("Banner"),), {"blank": True, "upload_to": UPLOAD_DIRECTORY})
+)
+
+MIGRATION_MODULES = {
+    "blog": "grafica.migrations.blog_migration",
+    "conf": "grafica.migrations.conf_migration",
+    "forms": "grafica.migrations.forms_migration",
+    "galleries": "grafica.migrations.galleries_migration",
+    "pages": "grafica.migrations.pages_migration",
+}
 
 ####################
 # DYNAMIC SETTINGS #

@@ -18,7 +18,8 @@ iframe {
 	max-width: 100%;
 }
 main li {
-	margin: 0 0 .75em;
+    margin: 0;
+    display: inline-block;
 }
 main a, main a:hover {
 	color: #337ab7;
