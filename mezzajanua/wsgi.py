@@ -28,5 +28,11 @@ try:
         """Send queued mail every 30 seconds"""
         call_command('send_queued_mail', processes=1)
 
+    @uwsgidecorators.timer(60*60)
+    def delete_comments(num):
+        """Delete comments every hour"""
+        from mezzanine.generic.models import Comment
+        Comment.objects.all().delete()
+
 except ImportError:
     print("uwsgidecorators not found. Cron and timers are disabled")
